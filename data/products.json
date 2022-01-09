@@ -298,23 +298,5 @@
    12,
    50
   ]
- },
- {
-  "id": 10,
-  "name": "jordan",
-  "description": "air jordan",
-  "image": "product-1641708326183.jpg",
-  "image1": "product-1641708326219.jpg",
-  "image2": "product-1641708326221.jpg",
-  "image3": "product-1641708326226.jpg",
-  "size": [
-   "12",
-   "13",
-   "14",
-   "15"
-  ],
-  "price": "100000000",
-  "category": "hombre",
-  "sale": ""
  }
 ]

@@ -25,6 +25,7 @@ const registerRouter = require('./src/routes/register');
 const indexProducts  = require('./src/routes/products');
 const newProduct  = require('./src/routes/newProduct');
 const editProduct  = require('./src/routes/editProduct');
+const deleteProduct  = require('./src/routes/deleteProduct');
 
 //uso de routers
 app.use('/', indexRouter);
@@ -37,8 +38,8 @@ app.use('/users/register', registerRouter)
 app.use('/products', indexProducts)
 app.use('/products/createproduct',newProduct);
 app.use(methodOverride('_method'));
-app.use('/product/',editProduct);
-app.use('/eliminar/',editProduct);
+app.use('/product',editProduct);
+app.use('/eliminar/',deleteProduct);
 
 //error 404
 

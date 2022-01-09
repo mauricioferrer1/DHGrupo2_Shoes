@@ -103,33 +103,33 @@ const controller = {
             "image2": image2,
             "image3": image3,
             "size": size,
-            "precio": precio,
+            "price": precio,
             "category": category,
             "sale": sale
           }
+
           let json = products; 
-          for (let i=0; json.length ; i++ ){
-            if( json[i].id == modifiedProduct.id ){
-              json[i] = modifiedProduct;
-              //return json;
+          let newJson = json.map((item) => {
+            if( item.id == id ){
+              return item = modifiedProduct;
+            } else {
+              return item
             }
-            return json
-          };
-    
-          fs.writeFileSync(path.join(__dirname,'../../data/products.json'),JSON.stringify(json,null," "));
-          res.redirect('products');
+          })
+          
+          fs.writeFileSync(path.join(__dirname,'../../data/products.json'),JSON.stringify(newJson,null," "));
+          
+        res.redirect('/products')
           
         } else {
           res.send('faltan datos') // faltan validaciones
         }
       },
       
-    deleteProduct: (req,res) => {
+    processDeleteProduct: (req,res) => {
         let json = products;
         let productToDeleteID = req.params.id;
-        let newjson = json.filter((item) =>{
-        item.id !=  productToDeleteID;
-        });
+        let newjson = json.filter(item => item.id != productToDeleteID);
   
         fs.writeFileSync(path.join(__dirname,'../../data/products.json'),JSON.stringify(newjson,null," "));
         res.redirect('/products');

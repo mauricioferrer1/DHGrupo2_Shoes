@@ -70,8 +70,8 @@
 					<div>
 					<button type="submit">Guardar producto</button>
 					</form>
-					<form action="/eliminar/<%= product.id %>/product?_method=DELETE" method="POST"></form>
-					<button type="reset"> Borrar producto</button>
+					<form action="/eliminar/<%= product.id %>/process?_method=DELETE" method="POST">
+						<button type="submit"> Borrar producto</button>
 					</form>
 					</div>
 				</div>

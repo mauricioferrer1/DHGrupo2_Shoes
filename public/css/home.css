@@ -1,0 +1,310 @@
+*
+{
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+.topbar{
+  background-color: #001845;
+  height: 3vh;
+  
+ 
+}
+.top-header { 
+    width: auto;
+    font-size: small;
+    font-weight: bold;
+    ;
+    
+  }
+
+  img{
+    width: 100%;
+  }
+
+
+  .menu{
+    background-color: #e6e9ef;
+    height: 10hv;
+    box-sizing: border-box;
+    display: flex;
+    padding: 8px  ;
+    justify-content: space-between;
+  }
+
+  .logo {
+    text-align: center;
+  }
+  .left-navbar {
+    display: flex;
+    width: 40vh;
+    justify-content: space-between;
+    align-items:center;
+    
+  }
+
+  .right-navbar
+  {
+    display: flex;
+    width: 40vh;
+    justify-content: space-between;
+    align-items:center;
+    
+  }
+.imagenlogo{
+  max-width: 100%;
+  max-height: 100%;
+  width: 35%;
+}
+
+
+  a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+
+div.burger-menu{
+  text-align: center;
+}
+
+div.burger-menu i{
+
+  border-radius: 5px;
+  color: black;
+  font-size: 30px;
+  display: block;
+  height: 25px;
+  margin: auto;
+  padding: 10px;
+  width: 40px;
+  
+}
+
+div.right-navbar i{
+  border-radius: 5px;
+  color: black;
+  font-size: 30px;
+  display: block;
+  height: 25px;
+  margin: auto;
+  padding: 10px;
+  width: 40px;
+ 
+}
+ul{
+  list-style: none;
+  display: flex;
+
+
+}
+
+.center-navbar{
+ 
+  display: none;
+}
+
+main{
+        width: 100%;
+        background-color: white;
+        overflow-y: scroll;
+        height: 68vh;        ;
+    }
+
+    .principal {
+        position: relative;
+    }
+
+    .fas {
+        color: black;
+        font-size: 20px;
+    }
+    
+    .fa-arrow-right {
+        position: absolute;
+        bottom: 50%;
+        margin: 10px;
+        right: 2%;
+    }
+
+    .fa-arrow-left {
+        position: absolute;
+        bottom: 50%;
+        width: 50%;
+        margin-right: 25%;
+        margin: 10px;
+    }
+
+    figure{
+        background-color: #001845;
+    }
+
+.zapatohome {      
+      width: 25%;
+      display: block;
+      margin: auto;
+  }
+    
+
+
+h5 {
+    text-align: center;
+    color:white;
+    background-color: rgb(1, 1, 63);
+    }
+
+.coleccion {
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    margin-right: 50%;
+    /*opacity: 0,5;
+    margin-bottom: 5px;
+    Me gustaria aclarar asi se puede ver la imagen como en el boceto pero no pude
+    */
+}
+
+.contendedor {
+    width: 100%;
+ }
+
+.contenedorimagen {
+    width: 100%;
+    display: flex;      
+    justify-content: space-between;
+    background-color: #001845;   
+  }
+
+.imagen {
+      width: 10%;
+      margin: 5px 5px 10px 5px;
+        }
+
+
+
+footer {
+
+    
+    bottom:0;
+    width:100%;
+    height: 100px;
+    background-color: #979dac;
+    box-sizing: border-box;
+    display: flex;
+   
+  }
+  
+  a.linkfooter:link
+  {
+    color:white;
+    font-weight: normal;
+  }
+  
+  
+  .fa-youtube, .fa-map-marker-alt, .fa-instagram, .fa-facebook-square {
+    color: white;
+  }
+  
+  
+  .contacto {
+    background-color: #979dac ;
+    display: flex;
+    flex-wrap : wrap;
+    flex-direction: column;
+    color: white;
+    font-weight: bold;
+    width: fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: smaller;
+    justify-content: center;
+  }
+  
+  
+  .acerca {
+    display: none;
+  }
+  
+  .servicios {
+    display: none;
+  }
+  
+  .socialmedia {
+    
+      display: flex;
+      width: 40vh;
+      justify-content: space-between;
+      align-items:center;
+      margin-left: auto;
+      color: white;
+          
+    }
+
+  
+
+
+   @media (max-width: 425px){
+
+    .imagenafuera{
+        display: none;
+    }
+
+    .contenedorimagen {
+        width: 100%;
+        display: flex;      
+      justify-content: space-between;
+    }
+
+    .imagen {
+        width: 20%;
+    }
+
+   }
+
+
+
+   @media (min-width: 1024px){
+    .center-navbar{
+      display: flex;
+      justify-content: space-between;
+      align-items:center; 
+      font-size: medium;
+      flex-grow: 0.8;
+      
+    }
+    .burger-menu
+    {
+      display: none;
+    }
+
+    .acerca{
+      background-color: #979dac ;
+      display: flex;
+      flex-wrap : wrap;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+      width: fit-content;
+      margin-right: 20px;
+      font-size: smaller;
+      font-weight: bold;
+    }
+
+    .servicios{
+      background-color: #979dac ;
+      display: flex;
+      flex-wrap : wrap;
+      flex-direction: column;
+      color: white;
+      width: fit-content;
+      font-size: smaller;
+      margin-right: 20px;
+      justify-content: center;
+      font-weight: bold;
+    }
+    
+  }
+
+ 

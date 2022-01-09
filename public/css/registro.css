@@ -1,0 +1,73 @@
+header div.logo{
+    margin-top: 30px;
+    
+}
+
+.top-header { 
+    width: auto;
+    height: auto;
+    text-align:center;
+    font-size: small;
+    font-weight: bold;
+    ;
+    
+  }
+
+img{
+    width: 10%;
+}
+
+
+main{
+  width: 100%;
+  margin: 0 auto;
+}
+.camposLogin { 
+    
+    width: auto;
+    height: auto;
+    text-align:center;
+    margin : 20px 50px 3px 50px;
+    font-size: small;
+    font-weight: bold;
+   
+
+  }
+
+  ::placeholder{
+    font-size: smaller;
+    font-style: italic;
+  }
+  input:focus { 
+    outline: none ;
+    border-color: #eba917;
+    box-shadow: 0 0 2px #eba917;
+  }
+
+ 
+
+ .camposlogin.p{
+  font-size: 7;
+  font-style: italic;
+}
+
+
+button{
+    background-color: #eba917;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+   
+  }
+
+
+  .linkLogin{
+     /* margin: 10px;
+      padding: 20px 300px 20px 360px;
+      margin-left: 30px;*/
+  }
+
+ 
+  

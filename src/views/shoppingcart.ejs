@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <%- include('./partials/head') %>
+
+    <link rel="stylesheet" href="/css/shoppingcart.css">
+    
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <%- include('./partials/header') %>
+    
+    <main>
+        <h2 class="titulo-cart">Tu Carrito</h2>
+
+        <section class="shopping-cart">
+            <article class="compra">
+                <ul class="columnas-compra">
+                    <li class="columna1">Producto</li>
+                    <li>Precio</li>
+                    <li>Cantidad</li>
+                    <li>Total</li>
+                </ul>
+
+                <ul class="contenido-compra">
+                    <li class="comprado"><img class="vendido" src="../images/suede classic rojo.PNG" alt="Producto deaseado N°1"></li>
+                    <li class="precio-unidad">$ 1,000</li>
+                    <li class="qty-box">1 
+                        <ul class="fas-iconos">
+                            <li><button class="mas-qty"><i class="fas fa-plus"></i></button></li>
+                            <li><button class="menos-qty"><i class="fas fa-minus"></i></button></li>
+                        </ul>
+                    </li>
+                    <li>$ 1,000</li>
+                </ul>
+                <ul class="detalle-texto">
+                    <li class="texto-compra">Nombre del Producto - Color Elegido - Talle Elegido</li>
+                </ul>
+                <ul class="complemento-carrito">
+                    <li><button class="go-back"></i>Seguir Navegando</button></li>
+                </ul>
+                <ul>
+                    <div class="coupon">
+                        <form action="/" method="post">
+                            <input class="promocion" type="text" name="cupon" placeholder="Ingresá descuento o gift card?">
+                        </form>
+                        <button class="giftcard">Aplicar</button>
+                    </div>
+                </ul>
+            </article>
+            <article class="carrito">
+                <h4>Total del Carrito</h4>
+                
+                <ul class="columnas-carrito">
+                    <li>Subtotal</li>
+                    <li>$ 1,000</li>
+                </ul>
+        
+                <ul class="envio-carrito">
+                    <li class="envio-envio">Envío</li>
+                    <li class="envio-descripcion">Lorem ipsum dolor sit amet.</li>
+                </ul>
+
+                <ul>
+                    <li><button class="costo-envio">Calcular Envío</button></li>
+                </ul>
+        
+                <ul class="descuento-carrito">
+                    <li>Descuento Aplicado</li>
+                    <li class="calculo-descuento">$ 0,00</li>
+                </ul>
+        
+                <ul class="total-carrito">
+                    <li>Total</li>
+                    <li>$ 1,000</li>
+                </ul>
+        
+                <button class="pagar-total">Continuar</button></li>
+            </article>
+
+        </section>
+       
+        <section class="mas-productos">
+            <h4 class="completa-compra">Completa tu compra</h4> 
+            
+            <div class="mas-ventas">
+                <ul class="productos-paraventa">
+                    <li><img class="venta" src="../images/ZAPATO 2.PNG" alt="zapato 2"></li>
+                    <li><img class="venta" src="../images/ZAPATO 3.PNG" alt="zapato 3"></li>
+                    <li><img class="venta" src="../images/ZAPATO 4.PNG" alt="zapato 4"></li>
+                    <li><img class="venta" src="../images/ZAPATO 5.PNG" alt="zapato 5"></li>
+                    <li><img class="venta" src="../images/ZAPATO 6.PNG" alt="zapato 6"></li>
+                    <li><img class="venta" src="../images/ZAPATO 2.PNG" alt="zapato 2"></li>
+                    <li><img class="venta" src="../images/ZAPATO 3.PNG" alt="zapato 3"></li>
+                </ul>
+
+                <ul class="descripcion-paraventa">
+                    <li class="descripcion-img">Lorem, ipsum dolor.</li>
+                    <li  class="descripcion-img">Lorem, ipsum dolor.</li>
+                    <li class="descripcion-img">Lorem, ipsum dolor.</li>
+                    <li class="descripcion-img">Lorem, ipsum dolor.</li>
+                    <li class="descripcion-img">Lorem, ipsum dolor.</li>
+                    <li class="descripcion-img">Lorem, ipsum dolor.</li>
+                    <li class="descripcion-img">Lorem, ipsum dolor.</li>
+                </ul>
+            <div class="promociones"></div>
+                <ul class="promocion-titulo">
+                    <li>Recibí novedades & promociones</li>
+                </ul>
+
+                <ul class="promocion-email">
+                    <li class="promocion-form"><form action="/" method="post">
+                        <input type="text" placeholder="Ingresa tu e-mail">
+                    </form></li>
+                    <li><button>OK!</button></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <%- include('./partials/footer') %>
+   
+</body>
+</html>

@@ -1,0 +1,300 @@
+
+
+
+*
+{
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+.topbar{
+  background-color: #001845;
+  height: 3vh;
+  
+ 
+}
+.top-header { 
+    width: auto;
+    font-size: small;
+    font-weight: bold;
+    ;
+    
+  }
+
+  img{
+    width: 100%;
+  }
+
+
+  .menu{
+    background-color: #e6e9ef;
+    height: 10hv;
+    box-sizing: border-box;
+    display: flex;
+    padding: 8px  ;
+    justify-content: space-between;
+  }
+
+  .logo {
+    text-align: center;
+  }
+  .left-navbar {
+    display: flex;
+    width: 40vh;
+    justify-content: space-between;
+    align-items:center;
+    
+  }
+
+  .right-navbar
+  {
+    display: flex;
+    width: 40vh;
+    justify-content: space-between;
+    align-items:center;
+    
+  }
+.imagenlogo{
+  max-width: 100%;
+  max-height: 100%;
+  width: 35%;
+}
+
+
+  a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+
+div.burger-menu{
+  text-align: center;
+}
+
+div.burger-menu i{
+
+  border-radius: 5px;
+  color: black;
+  font-size: 30px;
+  display: block;
+  height: 25px;
+  margin: auto;
+  padding: 10px;
+  width: 40px;
+  
+}
+
+div.right-navbar i{
+  border-radius: 5px;
+  color: black;
+  font-size: 30px;
+  display: block;
+  height: 25px;
+  margin: auto;
+  padding: 10px;
+  width: 40px;
+ 
+}
+ul{
+  list-style: none;
+  display: flex;
+
+
+}
+
+.center-navbar{
+ 
+  display: none;
+}
+
+main{
+  
+  margin-bottom: 0%;
+  height: 68vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  margin: 10px;
+
+}
+
+.NombrePagoColorTalla
+{
+  font-weight: bold;
+  margin-left: 4  0px;
+  width: 50%;
+
+}
+
+.colores
+{
+  display: flex;
+  width: 150%;
+
+}
+
+
+button{
+    background-color: #eba917;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+   
+  }
+
+
+  /* Footer */
+
+  footer {
+
+    
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height: 100px;
+    background-color: #979dac;
+    box-sizing: border-box;
+    display: flex;
+   
+  }
+  
+  a.linkfooter:link
+  {
+    color:white;
+    font-weight: normal;
+  }
+  
+  
+  .fa-youtube, .fa-map-marker-alt, .fa-instagram, .fa-facebook-square {
+    color: white;
+  }
+  
+  
+  .contacto {
+    background-color: #979dac ;
+    display: flex;
+    flex-wrap : wrap;
+    flex-direction: column;
+    color: white;
+    font-weight: bold;
+    width: fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: smaller;
+    justify-content: center;
+  }
+  
+  
+  .acerca {
+    display: none;
+  }
+  
+  .servicios {
+    display: none;
+  }
+  
+  .socialmedia {
+    
+      display: flex;
+      width: 40vh;
+      justify-content: space-between;
+      align-items:center;
+      margin-left: auto;
+      color: white;
+          
+    }
+
+    @media (min-width: 1024px){
+        .center-navbar{
+          display: flex;
+          justify-content: space-between;
+          align-items:center; 
+          font-size: medium;
+          flex-grow: 0.8;
+          
+        }
+ 
+        .burger-menu
+        {
+          display: none;
+        }
+
+        main
+        {
+          flex-direction: row;
+          justify-content: space-evenly;
+        }
+
+        .fotos360
+          {
+              width: 10%;  
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+          }
+
+        .fotodetalle
+        {
+          width: 30%;
+          margin: 10px;
+        }
+       .NombrePagoColorTalla
+        {
+          
+          width: 15%;
+          margin: 10px;
+        
+        }
+
+        .colores
+          {
+            width: 80%;
+          }
+      
+        .acerca{
+          background-color: #979dac ;
+          display: flex;
+          flex-wrap : wrap;
+          flex-direction: column;
+          justify-content: center;
+          color: white;
+          width: fit-content;
+          margin-right: 20px;
+          font-size: smaller;
+          font-weight: bold;
+        }
+
+        .servicios{
+          background-color: #979dac ;
+          display: flex;
+          flex-wrap : wrap;
+          flex-direction: column;
+          color: white;
+          width: fit-content;
+          font-size: smaller;
+          margin-right: 20px;
+          justify-content: center;
+          font-weight: bold;
+        }
+
+        .img360 {
+          background-color: white;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          } 
+
+        .mainphoto
+        {
+         
+        background-color: white;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+       
+      }
+    
+
+  

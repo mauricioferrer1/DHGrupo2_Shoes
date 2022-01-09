@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+</head>
+<body>
+    <div>
+			<div>
+				<h2 >Creando</h2>
+			</div>
+		
+		<div>
+			<form action="/products/createproduct" method="POST">
+				<div>
+					<div>
+						<label for="name" class="">Nombre del producto:</label>
+						<input type="text" id="name" name="name">
+					</div>
+					<div >
+						<label>Descipción:</label>
+						<input type="text" id="description"  name="description">
+					</div>
+					<div>
+						<label for="img">Imagen de Producto:</label>
+						<input type="file" name="img" accept=".jpg" id="img">
+					</div>
+					<div>
+						<label for="size">Size:</label>
+						<input type="text" name="size" id="size">
+					</div>
+					<div>
+						<label for="price" class="form-label">Precio del producto:</label>
+						<input type="text" id="precio" name="precio">
+					</div>
+					<div>
+						<label for="category" class="form-label">Categoría:</label>
+						<select name="category" id="category" class="form-input">
+							<option value="">Elegí</option>
+							<option value="en oferta">En oferta</option>
+						</select>
+					</div>
+					
+					<div>
+					<button type="submit">Guardar producto</button>
+					<button type="reset"> Borrar producto</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,346 @@
+
+
+
+*
+{
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+.topbar{
+  background-color: #001845;
+  height: 3vh;
+  
+ 
+}
+.top-header { 
+    width: auto;
+    font-size: small;
+    font-weight: bold;
+    ;
+    
+  }
+
+  img{
+    width: 90%;
+  }
+
+
+  .menu{
+    background-color: #e6e9ef;
+    height: 10hv;
+    box-sizing: border-box;
+    display: flex;
+    padding: 8px  ;
+    justify-content: space-between;
+  }
+
+  a {
+    height: fit-content;
+    
+  }
+
+  .products{
+    height: fit-content;
+  }
+
+  .logo {
+    text-align: center;
+  }
+  .left-navbar {
+    display: flex;
+    width: 40vh;
+    justify-content: space-between;
+    align-items:center;
+    
+  }
+
+  .right-navbar
+  {
+    display: flex;
+    width: 40vh;
+    justify-content: space-between;
+    align-items:center;
+    
+  }
+.imagenlogo{
+  max-width: 100%;
+  max-height: 100%;
+  width: 35%;
+}
+
+
+  a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+
+div.burger-menu{
+  text-align: center;
+}
+
+div.burger-menu i{
+
+  border-radius: 5px;
+  color: black;
+  font-size: 30px;
+  display: block;
+  height: 25px;
+  margin: auto;
+  padding: 10px;
+  width: 40px;
+  
+}
+
+div.right-navbar i{
+  border-radius: 5px;
+  color: black;
+  font-size: 30px;
+  display: block;
+  height: 25px;
+  margin: auto;
+  padding: 10px;
+  width: 40px;
+ 
+}
+ul{
+  list-style: none;
+  display: flex;
+
+
+}
+
+.center-navbar{
+ 
+  display: none;
+}
+
+main{
+  
+  margin-bottom: 0%;
+  height: 68vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  margin: 10px;
+
+}
+
+/*====== Products ======*/
+.products-wrapper {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.products-title {
+  font-size: 2.4em;
+  font-weight: 400;
+  color: var(--gray);
+}
+
+.product-box {
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 300ms;
+  margin: 20px 0;
+}
+
+.product-box a {
+  display: block;
+}
+
+.product-box_image {
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.product-box_data {
+  padding: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.product-box_data h2 {
+  font-size: 2.4em;
+  font-weight: 300;
+  margin: 0;
+}
+
+.product-box_data span {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: var(--green);
+  margin: 0 0 0 10px;
+}
+
+.product-box_data p {
+  font-size: 1em;
+  width: 100%;
+  color: var(--gray);
+  margin: 0;
+  height: 0;
+  transition: 300ms;
+  overflow: hidden;
+}
+
+.product-box_data i {
+  color: var(--green);
+  font-size: 0.7em;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border: solid 1px;
+  border-radius: 50%;
+  position: absolute;
+  top: -15px;
+  right: 15px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms;
+  
+}
+
+.product-box:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.product-box:hover p {
+  height: 40px;
+  margin-top: 15px;
+}
+
+.product-box:hover i {
+  transform: rotate(360deg);
+  box-shadow: 0 0 5px var(--green);
+}
+
+  /* Footer */
+
+  footer {
+
+    
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height: 100px;
+    background-color: #979dac;
+    box-sizing: border-box;
+    display: flex;
+   
+  }
+  
+  a.linkfooter:link
+  {
+    color:white;
+    font-weight: normal;
+  }
+  
+  
+  .fa-youtube, .fa-map-marker-alt, .fa-instagram, .fa-facebook-square {
+    color: white;
+  }
+  
+  
+  .contacto {
+    background-color: #979dac ;
+    display: flex;
+    flex-wrap : wrap;
+    flex-direction: column;
+    color: white;
+    font-weight: bold;
+    width: fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: smaller;
+    justify-content: center;
+  }
+  
+  
+  .acerca {
+    display: none;
+  }
+  
+  .servicios {
+    display: none;
+  }
+  
+  .socialmedia {
+    
+      display: flex;
+      width: 40vh;
+      justify-content: space-between;
+      align-items:center;
+      margin-left: auto;
+      color: white;
+          
+    }
+
+    @media (min-width: 1024px){
+        .center-navbar{
+          display: flex;
+          justify-content: space-between;
+          align-items:center; 
+          font-size: medium;
+          flex-grow: 0.8;
+          
+        }
+ 
+        
+        .img{
+          width: 50%;
+        }
+
+        .burger-menu
+        {
+          display: none;
+        }
+
+        main
+        {
+          flex-direction: row;
+          justify-content: space-evenly;
+        }
+
+       
+
+        
+      
+        .acerca{
+          background-color: #979dac ;
+          display: flex;
+          flex-wrap : wrap;
+          flex-direction: column;
+          justify-content: center;
+          color: white;
+          width: fit-content;
+          margin-right: 20px;
+          font-size: smaller;
+          font-weight: bold;
+        }
+
+        .servicios{
+          background-color: #979dac ;
+          display: flex;
+          flex-wrap : wrap;
+          flex-direction: column;
+          color: white;
+          width: fit-content;
+          font-size: smaller;
+          margin-right: 20px;
+          justify-content: center;
+          font-weight: bold;
+        }
+
+        
+       
+      }
+    
+
+  

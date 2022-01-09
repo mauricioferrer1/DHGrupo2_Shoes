@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <%- include('../partials/head') %>
+
+    <link rel="stylesheet" href="/css/detalleproducto.css">
+    <title>The Shoes Company</title>
+
+</head>
+<body>
+
+    <%- include('../partials/header') %>
+
+<main>
+   
+            <div class = "fotos360" >
+                <img class ="img360" src="/images/products/<%=product.image1%>" >
+                <img class ="img360" src="/images/products/<%=product.image2%>" >
+                
+            </div>
+            <div class ="fotodetalle">
+                <img class ="mainphoto" src="/images/products/<%=product.image%>" >
+                <p><%=product.description%></p><br>
+            </div>
+            <div class = "NombrePagoColorTalla" >
+                <p><%=product.name%></p><br>
+                <p>$<%=product.price%></p>
+                <br><br>
+                <p>Color:</p>
+                <section class="colores">
+                    <label>
+                        <input type="radio" name="colores" value="suedeblue" checked>
+                        <img src="/images/products/suede blue.jpg">
+                    </label>
+                    <label>
+                        <input type="radio" name="colores" value="suedered2" checked>
+                        <img src="/images/products/suede red2.jpg">
+                    </label>
+                    <label>
+                        <input type="radio" name="colores" value="suedeblack" checked>
+                        <img src="/images/products/suede black.jpg">
+                    </label>
+                </section
+                            <p>Talla :</p>
+                <div class="talla" style="width:200px;">                
+                   <select id ="talla">
+                        <% for (let i=0; i< product.size.length; i++) {%>
+                              <option value='<%= product.size[i] %>'><%= product.size[i] %></option>
+                       <% }%>
+                    </select>
+
+                </div>
+                <br>
+                <button type="submit" onclick="alert('Hemos añadido tu producto al carrito ')">Agregar al carrito </button>
+                <br><br><br><br><br>
+            
+
+            </div>
+    
+            
+          
+          
+                
+                   
+        
+            
+         
+</main>
+
+<%- include('../partials/footer') %>
+
+</body>
+</html>

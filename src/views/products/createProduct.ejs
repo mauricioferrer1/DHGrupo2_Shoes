@@ -12,7 +12,7 @@
 			</div>
 		
 		<div>
-			<form action="/products/createproduct" method="POST">
+			<form action="/products/createproduct" method="POST" enctype="multipart/form-data">
 				<div>
 					<div>
 						<label for="name" class="">Nombre del producto:</label>
@@ -23,12 +23,28 @@
 						<input type="text" id="description"  name="description">
 					</div>
 					<div>
-						<label for="img">Imagen de Producto:</label>
+						<label for="img">Imagen ppal de Producto:</label>
+						<input type="file" name="img" accept=".jpg" id="img">
+					</div>
+					<div>
+						<label for="img">Imagen 1 de Producto:</label>
+						<input type="file" name="img" accept=".jpg" id="img">
+					</div>
+					<div>
+						<label for="img">Imagen 2 de Producto:</label>
+						<input type="file" name="img" accept=".jpg" id="img">
+					</div>
+					<div>
+						<label for="img">Imagen 3 de Producto:</label>
 						<input type="file" name="img" accept=".jpg" id="img">
 					</div>
 					<div>
 						<label for="size">Size:</label>
-						<input type="text" name="size" id="size">
+						<% let talles = [4,5,6,7,8,9,10,11,12,13,14,15] %> 
+						<% for( let i = 0; i < talles.length; i++) { %>
+							<label for="size">UK-<%= talles[i] %> </label>
+							<input type="checkbox" name="size" id="size" value="<%= talles[i] %>">
+						<% } %>
 					</div>
 					<div>
 						<label for="price" class="form-label">Precio del producto:</label>
@@ -38,7 +54,17 @@
 						<label for="category" class="form-label">Categoría:</label>
 						<select name="category" id="category" class="form-input">
 							<option value="">Elegí</option>
-							<option value="en oferta">En oferta</option>
+							<option value="niño">niño</option>
+							<option value="mujer">mujer</option>
+							<option value="hombre">hombre</option>
+						</select>
+					</div>
+					<div>
+						<label for="sale" class="form-label">Sale Status:</label>
+						<select name="sale" id="sale" class="form-input">
+							<option value="">Elegí</option>
+							<option value="on-sale">On-Sale</option>
+							<option value="last-month">Last-Month</option>
 						</select>
 					</div>
 					

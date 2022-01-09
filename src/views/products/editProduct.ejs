@@ -11,32 +11,71 @@
 				<h2 >Edit</h2>
 			</div>
 		<div>
-			<form action="" method="">
+			<form action="/product/<%= product.id %>/saveproduct?_method=PUT" method="POST" enctype="multipart/form-data">
 				<div>
 					<div>
 						<label for="name" class="">Nombre del producto:</label>
-						<input type="text" id="name" name="name">
+						<input type="text" id="name" name="name" value="<%=product.name%>">
+					</div>
+					<div >
+						<label>Descipción:</label>
+						<input type="text" id="description"  name="description" value="<%=product.description%>">
+					</div>
+					<div>
+						<label for="img">Imagen ppal de Producto:</label>
+						<input type="file" name="img" accept=".jpg" id="img">
+					</div>
+					<div>
+						<label for="img">Imagen 1 de Producto:</label>
+						<input type="file" name="img" accept=".jpg" id="img">
+					</div>
+					<div>
+						<label for="img">Imagen 2 de Producto:</label>
+						<input type="file" name="img" accept=".jpg" id="img">
+					</div>
+					<div>
+						<label for="img">Imagen 3 de Producto:</label>
+						<input type="file" name="img" accept=".jpg" id="img">
+					</div>
+					<div>
+						<label for="size">Size:</label>
+						<% let talles = [4,5,6,7,8,9,10,11,12,13,14,15] %> 
+						<% for( let i = 0; i < talles.length; i++) { %>
+							<label for="size">UK-<%= talles[i] %> </label>
+							<input type="checkbox" name="size" id="size" value="<%= talles[i] %>">
+						<% } %>
 					</div>
 					<div>
 						<label for="price" class="form-label">Precio del producto:</label>
-						<input type="text" id="precio" name="precio">
+						<input type="text" id="precio" name="precio" value="<%=product.precio%>">
 					</div>
 					<div>
 						<label for="category" class="form-label">Categoría:</label>
 						<select name="category" id="category" class="form-input">
 							<option value="">Elegí</option>
-							<option value="in-sale">En oferta</option>
+							<option value="niño">niño</option>
+							<option value="mujer">mujer</option>
+							<option value="hombre">hombre</option>
 						</select>
 					</div>
-					<div >
-						<label>Descipción:</label>
+					<div>
+						<label for="sale" class="form-label">Sale Status:</label>
+						<select name="sale" id="sale" class="form-input">
+							<option value="">Elegí</option>
+							<option value="on-sale">On-Sale</option>
+							<option value="last-month">Last-Month</option>
+						</select>
 					</div>
-					<div class="col-12">
+					
+					<div>
 					<button type="submit">Guardar producto</button>
+					</form>
+					<form action="/eliminar/<%= product.id %>/product?_method=DELETE" method="POST"></form>
 					<button type="reset"> Borrar producto</button>
+					</form>
 					</div>
 				</div>
-			</form>
+			
 		</div>
 
 	</div>

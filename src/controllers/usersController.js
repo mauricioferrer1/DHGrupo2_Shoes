@@ -1,11 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs')
-
-
-
-
-
 const usersFilePath = path.join(__dirname, '../../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
@@ -34,17 +29,13 @@ const controller = {
       
         
         let userExist = users.find (user => user.email == email)
-                    if (userExist) 
-                    {
-                      
-                        res.send("Ese Email ya esta registrado " ) ;
-                    }
-                    else
-                    {
-                       users.push(campos);
-                       fs.writeFileSync(usersFilePath,JSON.stringify(users,null,2), 'utf-8');
-                       res.render ('users/thankyouregister', {campos});
-                   }
+            if (userExist) {
+                res.send("Ese Email ya esta registrado " ) ;
+            } else {
+                users.push(campos);
+                fs.writeFileSync(usersFilePath,JSON.stringify(users,null,2), 'utf-8');
+                res.render ('users/thankyouregister', {campos});
+            }
       },
 
     deleteUser:  (req,res) => {
@@ -53,8 +44,7 @@ const controller = {
         let finalUsers = users.filter (user => user.id == id);
         fs.writeFileSync(usersFilePath,JSON.stringify(users,null,2), 'utf-8');
          res.send ('usuario' + id + 'borrado');
-                   
-      }
+    }
 
   
   };

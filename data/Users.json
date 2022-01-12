@@ -559,5 +559,15 @@
     "category": "user",
     "password2": "$2a$10$jrDICsyOBhyHoD2evyM7N.tgIT/SIGFlcb2vtKtjxyNVCta5gKbk.",
     "image": "userProfile-1641694699480.png"
+  },
+  {
+    "id": 65,
+    "first_name": "final",
+    "last_name": "final",
+    "email": "final",
+    "password": "$2a$10$qh5KInF9Tzspagor/BmlPumNp1oNQozCa7LIS8OM9SV9kwShLXJm2",
+    "category": "user",
+    "password2": "$2a$10$nfXN.8XnPzNhwMZvsgeHyuw/SX.PV079q59g.FYvLmZZUlmYrdrfW",
+    "image": "userProfile-1641757948692.png"
   }
 ]

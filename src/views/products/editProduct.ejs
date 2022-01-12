@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>formulario</title>
+	    
+		<%- include('../partials/head') %>
+	
+		<link rel="stylesheet" href="/css/detalleproducto.css">
+		<title>The Shoes Company</title>
+	
+	
 </head>
 <body>
+	<%- include('../partials/header') %>
+
     <div>
 			<div>
-				<h2 >Edit</h2>
+				<h1 >Edicion de Productos </h1>
 			</div>
 		<div>
-			<form action="/product/<%= product.id %>/saveproduct?_method=PUT" method="POST" enctype="multipart/form-data">
+			<form class = "camposLogin" action="/product/<%= product.id %>/saveproduct?_method=PUT" method="POST" enctype="multipart/form-data">
 				<div>
 					<div>
 						<label for="name" class="">Nombre del producto:</label>
@@ -19,10 +25,10 @@
 					</div>
 					<div >
 						<label>Descipción:</label>
-						<input type="text" id="description"  name="description" value="<%=product.description%>">
+						<input type="text" size="100" id="description"  name="description" value="<%=product.description%>">
 					</div>
 					<div>
-						<label for="img">Imagen ppal de Producto:</label>
+						<label for="img">Imagen Principal de Producto:</label>
 						<input type="file" name="img" accept=".jpg" id="img">
 					</div>
 					<div>
@@ -79,5 +85,6 @@
 		</div>
 
 	</div>
+	<%- include('../partials/footer') %>
 </body>
 </html>

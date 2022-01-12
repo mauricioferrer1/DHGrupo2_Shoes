@@ -6,6 +6,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const controller = {
 
     listarProductos: (req,res) => {
+      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
       res.render('products/products', {products})
     },
 
@@ -130,7 +131,7 @@ const controller = {
         let json = products;
         let productToDeleteID = req.params.id;
         let newjson = json.filter(item => item.id != productToDeleteID);
-  console.log(JSON.stringify(newjson,null," "))
+  
         fs.writeFileSync(path.join(__dirname,'../../data/products.json'),JSON.stringify(newjson,null," "));
         res.redirect('/products');
     }

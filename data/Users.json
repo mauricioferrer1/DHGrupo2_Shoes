@@ -569,5 +569,15 @@
     "category": "user",
     "password2": "$2a$10$nfXN.8XnPzNhwMZvsgeHyuw/SX.PV079q59g.FYvLmZZUlmYrdrfW",
     "image": "userProfile-1641757948692.png"
+  },
+  {
+    "id": 66,
+    "first_name": "pp",
+    "last_name": "pp",
+    "email": "p@p",
+    "password": "$2a$10$9IJL55rvz5SWALL/aq6CtOibV.hashV/YxaFaxY3otTLwRIEyl3AO",
+    "category": "user",
+    "password2": "$2a$10$ajJ6ex8ZcnZb5olQwcDDBeGbhExjveNodrKFrX5G8Y5ti6S47f6mm",
+    "image": "userProfile-1642551204502.png"
   }
 ]

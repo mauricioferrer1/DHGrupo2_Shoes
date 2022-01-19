@@ -300,13 +300,13 @@
   ]
  },
  {
-  "id": 10,
-  "name": "Adidas boost",
-  "description": "Prototipo tras prototipo. Innovación tras innovación. Prueba tras prueba. Únete a nosotros en la busqueda constante de maximizar y armonizar el peso, la comodidad y en rendimiento",
-  "image": "zapato 4.png",
-  "image1": "AdidasBoost1.jpg",
-  "image2": "AdidasBoost2.jpg",
-  "image3": "AdidasBoost3.jpg",
+  "id": 9,
+  "name": "Adidas donovan issue ",
+  "description": "Detailing Donovan Mitchell's path from the playground to stardom, Spida's newest signature sneakers from adidas Basketball are all about the journey.",
+  "image": "zapato 3.png",
+  "image1": "donovanTop.jpg",
+  "image2": "donovanBack.jpg",
+  "image3": "donovanAlt.jpg",
   "size": [
    4,
    5,
@@ -321,8 +321,8 @@
    14,
    15
   ],
-  "price": 1315.17,
-  "category": "hombre",
+  "price": 2804.56,
+  "category": "mujer",
   "stock": [
    3,
    5,

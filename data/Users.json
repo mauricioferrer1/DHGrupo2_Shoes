@@ -579,5 +579,23 @@
     "category": "user",
     "password2": "$2a$10$ajJ6ex8ZcnZb5olQwcDDBeGbhExjveNodrKFrX5G8Y5ti6S47f6mm",
     "image": "userProfile-1642551204502.png"
+  },
+  {
+    "id": 68,
+    "first_name": "gabriel",
+    "last_name": "manes",
+    "email": "gaby@htm.com",
+    "category": "user",
+    "image": "userProfile-1642957163296.png"
+  },
+  {
+    "id": 69,
+    "first_name": "Fede",
+    "last_name": "Manes",
+    "email": "fede@htm.com",
+    "password": "$2a$10$1JqO1N6lTZ8oyXSjc2jF4O8vl6RESpqY8G5L1zaCbKJGLJL/eW75S",
+    "category": "user",
+    "password2": "$2a$10$uBC5sQ7.7Ya0n.B2mcdx9.uIQvx3vvWntUvz.bIaf9G7sCGHOqslC",
+    "image": "userProfile-1642967254411.jpg"
   }
 ]

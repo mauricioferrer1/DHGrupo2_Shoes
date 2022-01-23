@@ -28,12 +28,26 @@
 
 <!---->
 <main>
-           <form class = "camposLogin" >
-                <input type="email" id="username" name="username"  placeholder = "Email" size="30" autofocus> <br><br>
-                <input type="password" id="password" name="password" placeholder="Password" size="30"> <br><br>
-                <input type="checkbox"> Recordar mi usuario<br><br>
+           <form class = "camposLogin" action="/users/login" method="POST">
+                <input type="email" id="username" name="username"  placeholder = "Email"  value= '<%= locals.old && old.username? old.username : ""%>'  size="30" autofocus>
+                <% if (locals.errors) { %>
+                    <% errors.forEach(error => { %>
+                        <div class="error">
+                            <%= error.msg %> 
+                        </div>
+                    <% }) %>
+                <% } %>
+                <br><br>
+                <input type="password" id="password" name="password" placeholder="Password" size="30">
+                <% if (locals.errors && errors.password) { %>
+                    <div>
+                        <%= errors.password.msg %>
+                    </div>
+                 
+                <% } %><br><br>
+                <input type="checkbox" name="checkbox"> Recordar mi usuario<br><br>
                 <div class = "submitButton"enviar>
-                    <button type="submit" onclick="alert('formulario enviado ')">Ingresa a tu cuenta </button>
+                    <button type="submit">Ingresa a tu cuenta </button>
                     <br>
                     <br>
                     <a href="#">Olvide mi contraseña</a> <br><br>

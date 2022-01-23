@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <%- include('../partials/head') %>
+
+        <link rel="stylesheet" href="/css/userprofile.css">
+    <title>User profile</title>
+
+</head>
+<body>
+
+    <%- include('../partials/header') %>
+
+<main>
+
+    <div class="welcome-user">
+        <h1>Bienvenido a tu perfil </h1>
+        <h1> <%= user.first_name %> <%= user.last_name %></h1>
+    </div>
+
+    <figure class= " user-img-container">
+        <img class="user-img" src="/images/users/<%= user.image %> " alt="user image">
+    </figure>  
+         
+</main>
+
+<%- include('../partials/footer') %>
+
+</body>
+</html>

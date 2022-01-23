@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require ('../controllers/productsController');
 const path = require ('path');
+const autentication = require ('../../middlewares/autenticationMiddleware');
 
 //Uso de multer
 const multer = require('multer');
@@ -22,7 +23,7 @@ const storage = multer.diskStorage( {
 const upload = multer({ storage });
 
 /* GET create product page. */
-router.get('/:id/editproduct/', controller.editProduct);
+router.get('/:id/editproduct/',autentication, controller.editProduct);
 
 /* PUT create product page. */
 router.put('/:id/saveproduct',upload.any('img'), controller.ProcessEditProduct);

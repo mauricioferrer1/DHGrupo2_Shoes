@@ -1,7 +1,23 @@
 const express = require("express");
+const session = require('express-session');
 const path = require('path');
 const app = express();
 const methodOverride = require('method-override')
+const userLoggedMiddleware = require('./middlewares/userloggedmiddleware');
+const cookies = require ('cookie-parser');
+
+//seteo session
+app.use(session({
+    secret:'grupo 2 shoe company',
+    resave: false,
+    saveUninitialized: false,
+}));
+
+//seteo cookies
+app.use(cookies());
+
+// middleware aplicacion 
+app.use(userLoggedMiddleware);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'src/views'));
@@ -22,10 +38,13 @@ const detailRouter = require('./src/routes/detail');
 const cartRouter = require('./src/routes/cart');
 const loginRouter = require('./src/routes/login');
 const registerRouter = require('./src/routes/register');
+const profileRouter = require('./src/routes/userProfile');
+const logOutRouter = require('./src/routes/logout');
 const indexProducts  = require('./src/routes/products');
 const newProduct  = require('./src/routes/newProduct');
 const editProduct  = require('./src/routes/editProduct');
 const deleteProduct  = require('./src/routes/deleteProduct');
+const { profile } = require("console");
 
 //uso de routers
 app.use('/', indexRouter);
@@ -35,6 +54,8 @@ app.use('/detail', detailRouter);
 app.use('/shoppingcart', cartRouter);
 app.use('/users/login', loginRouter)
 app.use('/users/register', registerRouter)
+app.use('/users/profile',profileRouter);
+app.use('/logout', logOutRouter);
 app.use('/products', indexProducts)
 app.use('/products/createproduct',newProduct);
 app.use(methodOverride('_method'));

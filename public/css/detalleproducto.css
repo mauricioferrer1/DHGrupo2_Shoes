@@ -21,6 +21,11 @@
     
   }
 
+  .profile-img{
+    border-radius: 50%;
+    width: 30%;
+}
+
   img{
     width: 100%;
   }

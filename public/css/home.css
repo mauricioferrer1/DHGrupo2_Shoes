@@ -22,6 +22,11 @@
     width: 100%;
   }
 
+  .profile-img{
+    border-radius: 50%;
+    width: 30%;
+  }
+
 
   .menu{
     background-color: #e6e9ef;

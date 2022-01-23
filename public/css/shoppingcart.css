@@ -12,6 +12,11 @@
   font-weight: bold;
 }
 
+.profile-img{
+  border-radius: 50%;
+  width: 30%;
+}
+
 .topbar{
   background-color: #001845;
   height: 3vh;

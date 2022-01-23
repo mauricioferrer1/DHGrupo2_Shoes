@@ -23,8 +23,15 @@
                 <ul class= "right-navbar">
                     <li><a href="#"><i class="fas fa-search fa-2x"></i></a></li>
                     <li><a href="#"><i class="far fa-heart fa-2x"></i></a></li>
-                    <li><a href="/users/login"><i class="far fa-user fa-2x"></i></a></li>
-                    <li><a href="/shoppingcart"><i class="fas fa-shopping-cart fa-2x"></i></a></li>
+                    <% if (locals.islogged) { %>
+
+                        <li> <a href="/users/profile"></a><img class="profile-img" src="images/users/<%= locals.userlogged? locals.userlogged.image : 'default.png'%>" alt="Hi User"> Hi, <%=locals.userlogged.first_name%>  </li>
+                        <li><a href="/logout">Log Out</a></li>
+                        <li><a href="/shoppingcart"><i class="fas fa-shopping-cart fa-2x"></i></a></li>
+                        
+                    <% } else { %>
+                        <li><a href="/users/login"><i class="far fa-user fa-2x"></i></a></li>
+                    <% } %>
                 </ul>
 
             </nav>

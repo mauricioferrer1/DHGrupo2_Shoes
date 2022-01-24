@@ -597,5 +597,25 @@
     "category": "user",
     "password2": "$2a$10$uBC5sQ7.7Ya0n.B2mcdx9.uIQvx3vvWntUvz.bIaf9G7sCGHOqslC",
     "image": "userProfile-1642967254411.jpg"
+  },
+  {
+    "id": 70,
+    "first_name": "Mauricio",
+    "last_name": "Ferrer",
+    "email": "mm@mm.com",
+    "password": "$2a$10$HxoieXyRieJMRDCxAVD8iee/dicZ0GE45Yt3Vv5KRF9JAy5TvNAT6",
+    "category": "user",
+    "password2": "$2a$10$wlUJNCiiKqmNJ.ZdcGwHOOPkGz.HlOJcFwSupvskGrjMtRIK9wNp6",
+    "image": "userProfile-1642972238923.png"
+  },
+  {
+    "id": 71,
+    "first_name": "Pedro",
+    "last_name": "Perez",
+    "email": "m@m",
+    "password": "$2a$10$yzyKp2J2seOb9uqrErsSyOqi09sznrbTAf1wEm9NXNK0128gFBiwu",
+    "category": "user",
+    "password2": "$2a$10$Bfg0wP6eymgjFizxEA45Uu.K04KPceJWmbPuc3NRB93VJaQdWaYN.",
+    "image": "userProfile-1642989571249.png"
   }
 ]

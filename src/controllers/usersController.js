@@ -18,39 +18,41 @@ const controller = {
 
     loginProcess: (req, res) => {
         let errors = validationResult(req);
+        
         if(errors.isEmpty()){
-        let userName = req.body.username;
-        let userToLogin = controller.findUsername(userName);
+            let userName = req.body.username;
+            let userToLogin = controller.findUsername(userName);
 
-        if(userToLogin){
-            let passwordMatches = bcrypt.compareSync(req.body.password, userToLogin.password)
-            if (passwordMatches){
-                delete userToLogin.password;
-                delete userToLogin.password2;
-                req.session.userlogged = userToLogin;
+            if(userToLogin){
+               
+                let passwordMatches = bcrypt.compareSync(req.body.password, userToLogin.password)
+                if (passwordMatches){
+                    //delete userToLogin.password;
+                    delete userToLogin.password2;
+                    req.session.userlogged = userToLogin;
 
-                if (req.body.checkbox){
+                    if (req.body.checkbox){
 
-                    res.cookie('userEmail',req.body.username, { maxAge: (1000 * 60) * 2});
+                        res.cookie('userEmail',req.body.username, { maxAge: (1000 * 60) * 2});
+                    }
+                    return res.redirect('/users/profile');
                 }
-                return res.redirect('/users/profile');
+                return res.render('users/login', {
+                    error:{
+                        password:{
+                            msg:'Credenciales inválidas'
+                        }
+                    }
+                })
             }
+
             return res.render('users/login', {
                 error:{
-                    password:{
-                        msg:'Credenciales inválidas'
+                    username:{
+                        msg:'No se encuentra este email en nuestra base de datos'
                     }
                 }
             })
-        }
-
-        return res.render('users/login', {
-            error:{
-                username:{
-                    msg:'No se encuentra este email en nuestra base de datos'
-                }
-            }
-        })
     } else {
         res.render('users/login', {
             errors: errors.array(),

@@ -427,7 +427,7 @@ button:hover{
     justify-content: space-between;
     align-items:center; 
     font-size: medium;
-    flex-grow: 0.8;  
+    flex-grow: 0.4;  
   }
 
   .burger-menu{

@@ -23,7 +23,8 @@ const storage = multer.diskStorage( {
 const upload = multer({ storage });
 
 /* GET create product page. */
-router.get('/', autentication,controller.newProduct);
+//router.get('/', autentication,controller.newProduct);LO COMENTE PARA QUE NO ENVIE AL LOGIN EL MIDDLEWARE
+router.get('/',controller.newProduct);
 
 /* POST create product page. */
 router.post('/', upload.any('img'), controller.saveNewProduct);

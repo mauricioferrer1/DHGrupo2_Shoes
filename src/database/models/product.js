@@ -32,20 +32,33 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'products',
         timestamps: false
     };
-    const Product = sequelize.define(alias, cols, config)
+    const Product = sequelize.define(alias, cols, config);
 
     Product.associate = function(models) {
-        Product.hasMany(models.Color, {
+        Product.belongsTo(models.category, {
+            as: 'category',
+            foreignKey: 'category_id'
+        });
+        
+    
+    
+        Product.belongsToMany(models.color, {
             as: 'colors',
             throuhg : "inventory",
-            foreignKey: 'color_id'
+            foreignKey: 'product_id',
+            otherKey: 'color_id',
+            timestamps : false
         });
-
-        Product.hasMany(models.Size, {
+    
+    
+        Product.belongsToMany(models.size, {
             as: 'sizes',
             throuhg : "inventory",
-            foreignKey: 'size_id'
+            foreignKey: 'product_id',
+            otherKey: 'size_id',
+            timestamps : false
         });
     }
+
     return Product
 }

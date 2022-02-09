@@ -167,6 +167,17 @@ const controller = {
           })
       }
   },
+  processEditProduct:(req,res) => {
+      let pedirProducto =  db.products.findByPk(req.params.id)
+      let pedirColor =  db.color.findAll()
+      let pedirCategoria =  db.category.findAll()
+      let pedirTalle = db.size.findAll()
+        //o te traes el inventory?
+        Promise.all([pedirProducto,pedirColor,pedirCategoria,pedirTalle])
+        .then(function([producto,color,categoria,talle]){
+            res.render("/editProduct",{producto:producto,color:color,categoria:categoria,talle:talle})
+        })
+    }
   processDeleteProduct:(req,res) => {
       db.products.destroy({
           where: { 
@@ -175,5 +186,8 @@ const controller = {
          })
        res.redirect("/products")
   }
- }*/
+ }
+ 
+ Habria que modificiar los ejs creo
+ */
   module.exports = controller;

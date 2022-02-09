@@ -137,39 +137,43 @@ const controller = {
     }
       
   };
-  
-/* A revisar
-  let db = require ("../database/models/product")
- productController: {
-    saveNewProduct: (req,res) =>{
-db.product.create({
-    id:req.body,
-    name:req.body.name,
-    description:req.body.description,
-    image:req.body.img,
-    image1:req.body.img,
-    image2:req.body.img,
-    image3:req.body.img,
-    category_id:req.body.category,
-    color_id:req.body
-    //size_id:req.body.size,
-})
-res.redirect("/products")
-},
- listadoProductos: (req,res) => {
-     db.product.findAll()
-     .then(function(products){
-         res.render ("/products",{products})
-     })
+  /*
+  let db = require ("/database/models/product")
+  productController: {
+     saveNewProduct: (req,res) =>{
+ db.product.create({
+     name:req.body.name,
+     description:req.body.description,
+     image:req.body.img,
+     image1:req.body.img,
+     image2:req.body.img,
+     image3:req.body.img,
+     category_id:req.body.category,
+     color_id:req.body
+     //size_id:req.body.size,
+ })
+ res.redirect("/products")
  },
- detalleProducto: (req,res) => {
-     db.product.findByPk(req.params.id)
-         .then(function(product){
-             res.render("/product/:id",{product:product})
+  listadoProductos: (req,res) => {
+      db.product.findAll()
+      .then(function(products){
+          res.render ("/products",{products})
+      })
+  },
+  detalleProducto: (req,res) => {
+      db.product.findByPk(req.params.id,{include:[{association:"category"},{association:"colors"},{association:"sizes"}]})
+          .then(function(product){
+              res.render("/product/:id",{product:product})
+          })
+      }
+  },
+  processDeleteProduct:(req,res) => {
+      db.products.destroy({
+          where: { 
+          id: req.params.id
+                 }
          })
-     }
- }
-}
-  */
-
+       res.redirect("/products")
+  }
+ }*/
   module.exports = controller;

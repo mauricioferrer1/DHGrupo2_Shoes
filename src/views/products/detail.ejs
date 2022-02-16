@@ -45,13 +45,14 @@
                 <p>Talla :</p>
                 
                 <div class="talla" style="width:200px;">                
-                   <select id ="talla">
-                        <% for (let i=0; i< product.size.length; i++) {%>
-                              <option value='<%= product.size[i] %>'><%= product.size[i] %></option>
-                       <% }%>
-                    </select>
-
-                </div>
+                    <select id ="talla">
+                         <% for (let i=0; i< product.sizes.length; i++) {%>
+                               <option value='<%= product.sizes[i] %>'><%= product.sizes[i] %></option>
+                        <% }%>
+                     </select>
+ 
+                 </div>
+                 
                 <br>
                 <button type="submit" onclick="alert('Hemos añadido tu producto al carrito ')">Agregar al carrito </button>
                 <br><br><br><br><br>

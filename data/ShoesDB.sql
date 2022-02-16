@@ -12,6 +12,7 @@ CREATE TABLE `products` (
 	`image1` VARCHAR(40) NOT NULL,
 	`image2` VARCHAR(40) NOT NULL,
 	`image3` VARCHAR(40) NOT NULL,
+	`price` INT NOT NULL,
 	`category_id` INT(6) NOT NULL,
 	PRIMARY KEY (`id`)
  
@@ -35,7 +36,6 @@ CREATE TABLE `inventory` (
 	`color_id` INT(6) NOT NULL,
 	`size_id` INT(6) NOT NULL,
 	`stock` INT NOT NULL,
-	`price` INT NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -117,13 +117,13 @@ UNLOCK TABLES;
 
 LOCK TABLES `products` WRITE;
 
-INSERT INTO `products` VALUES (1,'Nike Comics Sun', 'Nike Comics Sun, a true work of art in which the shoe is like a white canvas, entirely hand painted, as if it were a real Kandinsky, directly at your feet. ', 'zapato 1.png', 'nikeComic1.jfif', 'nikeComic2.jfif', 'nikeComic3.jfif',1),(2,'Adidas RUN 60S 2.0', 'El legado deportivo de adidas estar a flor de piel en estos tenis inspirados en el running. Fusionando lo mejor de las siluetas de las pistas de atletismo y la moda urbana moderna, lucen una estética atemporal que combina a la perfección con tu día a día. ', 'zapato 2.png', 'AdidasRun1.jpg', 'AdidasRun2.jpg', 'AdidasRun3.jpg',2),(3,'Puma Suede red', ' The Suede hit the scene in 1968 and has been changing the game ever since. It’s been worn by the icons of every generation and it’s stayed classic through it all. This year, we relaunch the Suede with fresh colorways and subtle design updates. Classic as ever, for all-time.', 'suede classic rojo.png', 'Suede Classic rojo atras.png', 'suede classic rojo arriba.png', 'suede classic rojo abajo y arriba.png',3), (4,'Adidas donovan issue ', ' Detailing Donovan Mitchells path from the playground to stardom, Spidas newest signature sneakers from adidas Basketball are all about the journey.', 'zapato 3.png', 'donovanTop.jpg', 'donovanBack.jpg', 'donovanAlt.jpg',2),(5,'Adidas donovan issue ', ' "Prototipo tras prototipo. Innovación tras innovación. Prueba tras prueba. Únete a nosotros en la busqueda constante de maximizar y armonizar el peso, la comodidad y en rendimiento', 'zapato 4.png', 'AdidasBoost1.jpg', 'AdidasBoost2.jpg', 'AdidasBoost3.jpg',2);
+INSERT INTO `products` VALUES (1,'Nike Comics Sun', 'Nike Comics Sun, a true work of art in which the shoe is like a white canvas, entirely hand painted, as if it were a real Kandinsky, directly at your feet. ', 'zapato 1.png', 'nikeComic1.jfif', 'nikeComic2.jfif', 'nikeComic3.jfif',120,1),(2,'Adidas RUN 60S 2.0', 'El legado deportivo de adidas estar a flor de piel en estos tenis inspirados en el running. Fusionando lo mejor de las siluetas de las pistas de atletismo y la moda urbana moderna, lucen una estética atemporal que combina a la perfección con tu día a día. ', 'zapato 2.png', 'AdidasRun1.jpg', 'AdidasRun2.jpg', 'AdidasRun3.jpg',200,2),(3,'Puma Suede red', ' The Suede hit the scene in 1968 and has been changing the game ever since. It’s been worn by the icons of every generation and it’s stayed classic through it all. This year, we relaunch the Suede with fresh colorways and subtle design updates. Classic as ever, for all-time.', 'suede classic rojo.png', 'Suede Classic rojo atras.png', 'suede classic rojo arriba.png', 'suede classic rojo abajo y arriba.png',250,3), (4,'Adidas donovan issue ', ' Detailing Donovan Mitchells path from the playground to stardom, Spidas newest signature sneakers from adidas Basketball are all about the journey.', 'zapato 3.png', 'donovanTop.jpg', 'donovanBack.jpg', 'donovanAlt.jpg',300,2),(5,'Adidas donovan issue ', ' "Prototipo tras prototipo. Innovación tras innovación. Prueba tras prueba. Únete a nosotros en la busqueda constante de maximizar y armonizar el peso, la comodidad y en rendimiento', 'zapato 4.png', 'AdidasBoost1.jpg', 'AdidasBoost2.jpg', 'AdidasBoost3.jpg',150,2);
 UNLOCK TABLES;
 
 
 LOCK TABLES `inventory` WRITE;
 
-INSERT INTO `inventory` VALUES (1,1,1,1,100,120),(2,2,2,2,100,140),(3,2,2,2,100,220),(4,2,1,2,100,320),(5,1,1,3,100,120),(6,1,1,4,100,120),(7,1,1,1,100,120);
+INSERT INTO `inventory` VALUES (1,1,1,1,100),(2,2,2,2,100),(3,2,2,2,100),(4,2,1,2,100),(5,1,1,3,100),(6,1,1,4,100),(7,1,1,1,100);
 UNLOCK TABLES;
 
 

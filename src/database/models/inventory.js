@@ -17,10 +17,8 @@ module.exports = (sequelize, dataTypes) => {
         },
         stock: {
             type: dataTypes.INTEGER
-        },
-        price: {
-            type: dataTypes.INTEGER
         }
+       
         
     };
     let config = {

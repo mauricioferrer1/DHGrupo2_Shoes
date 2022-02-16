@@ -47,7 +47,7 @@
                 <div class="talla" style="width:200px;">                
                     <select id ="talla">
                          <% for (let i=0; i< product.sizes.length; i++) {%>
-                               <option value='<%= product.sizes[i] %>'><%= product.sizes[i] %></option>
+                               <option value='<%= product.sizes[i].size %>'><%= product.sizes[i].size %></option>
                         <% }%>
                      </select>
  

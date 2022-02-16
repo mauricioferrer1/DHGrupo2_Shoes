@@ -106,7 +106,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `categories` WRITE;
 
-INSERT INTO `categories` VALUES (1,'Niño'),(2,'HOmbre'),(3,'Mujer');
+INSERT INTO `categories` VALUES (1,'Niño'),(2,'Hombre'),(3,'Mujer');
 UNLOCK TABLES;
 
 

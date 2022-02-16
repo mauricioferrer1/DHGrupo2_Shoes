@@ -617,5 +617,15 @@
     "category": "user",
     "password2": "$2a$10$Bfg0wP6eymgjFizxEA45Uu.K04KPceJWmbPuc3NRB93VJaQdWaYN.",
     "image": "userProfile-1642989571249.png"
+  },
+  {
+    "id": 72,
+    "first_name": "hola",
+    "last_name": "dg",
+    "email": "dg@digitalhouse.com",
+    "password": "$2a$10$z3JWPPV.hPzQsPwzeEOKTe0p7iyBFpktTsy017Flti.od/9kvaAu2",
+    "category": "user",
+    "password2": "$2a$10$.pMiBR6F/HrkmK8DYg9.tODkFQhW8qI6RQowDfa3drFVL86HelQqm",
+    "image": "userProfile-1644970604404.jpeg"
   }
 ]

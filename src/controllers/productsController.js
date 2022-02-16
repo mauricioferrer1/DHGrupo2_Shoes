@@ -3,7 +3,7 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const controller = {
+/* const controller = {
 
     listarProductos: (req,res) => {
       const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -137,36 +137,51 @@ const controller = {
     }
       
   };
-  /*
-  let db = require ("/database/models/product")
-  productController: {
-     saveNewProduct: (req,res) =>{
- db.product.create({
-     name:req.body.name,
-     description:req.body.description,
-     image:req.body.img,
-     image1:req.body.img,
-     image2:req.body.img,
-     image3:req.body.img,
-     category_id:req.body.category,
-     color_id:req.body
-     //size_id:req.body.size,
- })
- res.redirect("/products")
- },
+  */
+  let db = require ("../database/models")
+
+  productController= {
+    
+    newProduct: (req,res) => {
+      res.render('products/createproduct');
+    },
+
+    saveNewProduct: (req,res) =>{
+      db.product.create({
+        name:req.body.name,
+        description:req.body.description,
+        image:req.files[0].filename,
+        image1:req.files[1].filename,
+        image2:req.files[2].filename,
+        image3:req.files[3].filename,
+        category_id:req.body.category,
+        //color_id:req.body
+        //size_id:req.body.size,
+      })
+    res.redirect("/products")
+  },
+  
   listadoProductos: (req,res) => {
       db.product.findAll()
       .then(function(products){
           res.render ("/products",{products})
       })
   },
+  
   detalleProducto: (req,res) => {
       db.product.findByPk(req.params.id,{include:[{association:"category"},{association:"colors"},{association:"sizes"}]})
           .then(function(product){
               res.render("/product/:id",{product:product})
           })
-      }
   },
+
+  editProduct: (req,res) => {
+    db.product.findByPk(req.params.id,{include:[{association:"category"},{association:"colors"},{association:"sizes"}]})
+          .then(function(product){
+            res.render('products/editproduct',{product});
+          })
+    },
+
   processEditProduct:(req,res) => {
       let pedirProducto =  db.products.findByPk(req.params.id)
       let pedirColor =  db.color.findAll()
@@ -175,9 +190,10 @@ const controller = {
         //o te traes el inventory?
         Promise.all([pedirProducto,pedirColor,pedirCategoria,pedirTalle])
         .then(function([producto,color,categoria,talle]){
-            res.render("/editProduct",{producto:producto,color:color,categoria:categoria,talle:talle})
+            res.render("/products",{producto:producto,color:color,categoria:categoria,talle:talle})
         })
-    }
+    },
+
   processDeleteProduct:(req,res) => {
       db.products.destroy({
           where: { 
@@ -188,6 +204,6 @@ const controller = {
   }
  }
  
- Habria que modificiar los ejs creo
- */
-  module.exports = controller;
+ //Habria que modificiar los ejs creo
+ 
+  module.exports = productController;

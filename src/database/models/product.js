@@ -7,25 +7,25 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         name: {
-            category: dataTypes.STRING
+            type: dataTypes.STRING
         },
         description: {
-            category: dataTypes.STRING
+            type: dataTypes.STRING
         },
         image: {
-            category: dataTypes.STRING
+            type: dataTypes.STRING
         },
         image1: {
-            category: dataTypes.STRING
+            type: dataTypes.STRING
         },
         image2: {
-            category: dataTypes.STRING
+            type: dataTypes.STRING
         },
         image3: {
-            category: dataTypes.STRING
+            type: dataTypes.STRING
         },
         category_id: {
-            category: dataTypes.INTEGER
+            type: dataTypes.INTEGER
         },
     };
     let config = {

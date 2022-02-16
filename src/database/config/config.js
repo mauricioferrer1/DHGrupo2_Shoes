@@ -4,9 +4,9 @@ module.exports =
   "development": {
     "username": "root",
     "password": null,
-    "database": "database_development",
+    "database": "shoesDB",
     "host": "127.0.0.1",
-    "dialect": "shoesDB"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",

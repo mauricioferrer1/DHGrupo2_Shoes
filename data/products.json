@@ -300,42 +300,20 @@
   ]
  },
  {
-  "id": 9,
-  "name": "Adidas donovan issue ",
-  "description": "Detailing Donovan Mitchell's path from the playground to stardom, Spida's newest signature sneakers from adidas Basketball are all about the journey.",
-  "image": "zapato 3.png",
-  "image1": "donovanTop.jpg",
-  "image2": "donovanBack.jpg",
-  "image3": "donovanAlt.jpg",
+  "id": 10,
+  "name": "jordan ok",
+  "description": "air jordan",
+  "image": "product-1644970520434.jpg",
+  "image1": "product-1644970520477.jpg",
+  "image2": "product-1644970520483.jpg",
+  "image3": "product-1644970520492.jpg",
   "size": [
-   4,
-   5,
-   6,
-   7,
-   8,
-   9,
-   10,
-   11,
-   12,
-   13,
-   14,
-   15
+   "7",
+   "8",
+   "9"
   ],
-  "price": 2804.56,
-  "category": "mujer",
-  "stock": [
-   3,
-   5,
-   6,
-   8,
-   9,
-   1,
-   0,
-   1,
-   3,
-   10,
-   12,
-   50
-  ]
+  "price": "1000",
+  "category": "niño",
+  "sale": "on-sale"
  }
 ]

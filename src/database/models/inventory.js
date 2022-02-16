@@ -7,19 +7,19 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         product_id: {
-            category: dataTypes.INTEGER
+            type: dataTypes.INTEGER
         },
         color_id: {
-            category: dataTypes.INTEGER
+            type: dataTypes.INTEGER
         },
         size_id: {
-            category: dataTypes.INTEGER
+            type: dataTypes.INTEGER
         },
         stock: {
-            category: dataTypes.INTEGER
+            type: dataTypes.INTEGER
         },
         price: {
-            category: dataTypes.INTEGER
+            type: dataTypes.INTEGER
         }
         
     };

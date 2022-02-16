@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         user_category: {
-            user_category: dataTypes.STRING
+            type: dataTypes.STRING
         },
        
     };

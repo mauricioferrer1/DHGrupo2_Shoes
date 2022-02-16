@@ -31,7 +31,7 @@ module.exports = (sequelize, dataTypes) => {
 
     
     Inventory.associate = function(models) {
-        User.hasMany(models.shopping_cart, {
+        Inventory.hasMany(models.Shopping_cart, {
             as: 'shopping_cart',
             foreignKey: 'purchased_item_id'
         });

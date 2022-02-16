@@ -26,12 +26,12 @@ module.exports = (sequelize, dataTypes) => {
     const Shopping_cart = sequelize.define(alias, cols, config)
 
     Shopping_cart.associate = function(models) {
-        Shopping_cart.belongsTo(models.user, {
+        Shopping_cart.belongsTo(models.User, {
             as: 'user_shopping',
             foreignKey: 'user_id'
         });
 
-        Shopping_cart.belongsTo(models.inventory, {
+        Shopping_cart.belongsTo(models.Inventory, {
             as: 'product',
             foreignKey: 'purchased_item_id'
         });

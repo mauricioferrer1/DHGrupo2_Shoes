@@ -29,18 +29,13 @@
                 <br><br>
                 <p>Color:</p>
                 <section class="colores">
-                    <label>
-                        <input type="radio" name="colores" value="suedeblue" checked>
-                        <img src="/images/products/suede blue.jpg">
-                    </label>
-                    <label>
-                        <input type="radio" name="colores" value="suedered2" checked>
-                        <img src="/images/products/suede red2.jpg">
-                    </label>
-                    <label>
-                        <input type="radio" name="colores" value="suedeblack" checked>
-                        <img src="/images/products/suede black.jpg">
-                    </label>
+                    <% for (let i=0; i< product.colors.length; i++) {%>
+                        <label>
+                            <input type="radio" name="colores" value="<%= product.colors[i].color %>" checked>
+                            <img src="/images/products/suede <%= product.colors[i].color%>.jpg">
+                        </label>
+                 <% }%>
+                    
                 </section
                 <p>Talla :</p>
                 
@@ -59,8 +54,9 @@
             
 
             </div>
+            <!--<% //if (locals.islogged) { %> -->
             <a href="/product/<%= product.id %>/editproduct"><button>Edit Product</button> </a>
-         
+            <!--<%// } %> -->
 </main>
 
 <%- include('../partials/footer') %>

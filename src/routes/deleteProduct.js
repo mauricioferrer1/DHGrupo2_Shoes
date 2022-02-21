@@ -5,6 +5,6 @@ const path = require ('path');
 const autentication = require ('../../middlewares/autenticationMiddleware');
 
 /* DELETE product */
-router.delete('/:id/process',autentication, controller.processDeleteProduct);
+router.delete('/:id/process', controller.processDeleteProduct);
 
 module.exports = router;

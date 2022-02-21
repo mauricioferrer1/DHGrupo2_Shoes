@@ -29,7 +29,7 @@
 <!---->
 <main>
            <form class = "camposLogin" action="/users/login" method="POST">
-                <input type="email" id="username" name="username"  placeholder = "Email"  value= '<%= locals.old && old.username? old.username : ""%>'  size="30" autofocus>
+                <input type="email" id="email" name="email"  placeholder = "Email"  value= '<%= locals.old && old.username? old.username : ""%>'  size="30" autofocus>
                 <% if (locals.errors) { %>
                     <% errors.forEach(error => { %>
                         <div class="error">

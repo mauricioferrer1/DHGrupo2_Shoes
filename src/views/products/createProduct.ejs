@@ -46,10 +46,18 @@
 					</div>
 					<div>
 						<label for="size">Size:</label>
-						<% let talles = [4,5,6,7,8,9,10,11,12,13,14,15] %> 
-						<% for( let i = 0; i < talles.length; i++) { %>
-							<label for="size">UK-<%= talles[i] %> </label>
-							<input type="checkbox" name="size" id="size" value="<%= talles[i] %>">
+						 
+						<% for( let i = 0; i < talle.length; i++) { %>
+							<label for="size">UK-<%= talle[i].size %> </label>
+							<input type="checkbox" name="size" id="size" value="<%= talle[i].size %>">
+						<% } %>
+					</div>
+					<div>
+						<label for="color">Color:</label>
+						 
+						<% for( let i = 0; i < color.length; i++) { %>
+							<label for="color"><%= color[i].color %> </label>
+							<input type="checkbox" name="color" id="color" value="<%= color[i].color %>">
 						<% } %>
 					</div>
 					<div>
@@ -60,10 +68,14 @@
 						<label for="category" class="form-label">Categoría:</label>
 						<select name="category" id="category" class="form-input">
 							<option value="">Elegí</option>
-							<option value="niño">niño</option>
-							<option value="mujer">mujer</option>
-							<option value="hombre">hombre</option>
+							<% for( let i = 0; i< category.length; i++ ) { %>
+								<option value= "<%= category[i].category %>"><%= category[i].category %></option>
+							<% } %>
 						</select>
+					</div>
+					<div >
+						<label>Stock:</label>
+						<input type="text" id="description" name="Stock">
 					</div>
 					<div>
 						<label for="sale" class="form-label">Sale Status:</label>

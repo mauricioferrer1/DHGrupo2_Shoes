@@ -627,5 +627,15 @@
     "category": "user",
     "password2": "$2a$10$.pMiBR6F/HrkmK8DYg9.tODkFQhW8qI6RQowDfa3drFVL86HelQqm",
     "image": "userProfile-1644970604404.jpeg"
+  },
+  {
+    "id": 73,
+    "first_name": "gaofalm",
+    "last_name": "fpdgkn ",
+    "email": "fefe@fefe.com",
+    "password": "$2a$10$7HHweIiTjTZigrgynstHfOajgY1uq8aiEGGo6ogoC8Ok2C8JBhnJS",
+    "category": "user",
+    "password2": "$2a$10$x1CUDjiNRi7a4tsiiinvGORUchrH3aQXvsM9GsUoj/xhjz0a6Qke6",
+    "image": "userProfile-1645303089628.jpg"
   }
 ]

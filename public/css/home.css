@@ -148,12 +148,14 @@ main{
     }
 
 .zapatohome {      
-      width: 25%;
+      width: 30%!important;
       display: block;
       margin: auto;
   }
     
-
+.carousel-inner{
+  background-color: #001845;
+}
 
 h5 {
     text-align: center;

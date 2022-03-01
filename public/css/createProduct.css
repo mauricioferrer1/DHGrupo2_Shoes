@@ -1,0 +1,18 @@
+*
+{
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+
+body{background-color: #979dac ;
+
+}
+.titulo{
+    text-align: center;
+
+}
+
+.formulario {
+    text-align: center;
+}

@@ -49,20 +49,25 @@
 						<input type="file" name="img" accept=".jpg" id="img">
 					</div>
 					<div>
-						<label for="size">Size:</label>
+						<label for="size">Talle:</label>
+						<select name="size" id="size" class="form-input">
+							<option value="">Elegí</option>
+							<<% for( let i = 0; i <  talle.length; i++) { %>
+								<option value= "<%= talle[i].size %>"><%= talle[i].size %></option>
+							<% } %>
+						</select>
 						 
-						<% for( let i = 0; i < talle.length; i++) { %>
-							<label for="size">UK-<%= talle[i].size %> </label>
-							<input type="checkbox" name="size" id="size" value="<%= talle[i].size %>">
-						<% } %>
+						
 					</div>
 					<div>
 						<label for="color">Color:</label>
-						 
-						<% for( let i = 0; i < color.length; i++) { %>
-							<label for="color"><%= color[i].color %> </label>
-							<input type="checkbox" name="color" id="color" value="<%= color[i].color %>">
-						<% } %>
+						<select name="color" id="color" class="form-input">
+							<option value="">Elegí</option>
+							<<% for( let i = 0; i < color.length; i++) { %>
+								<option value= "<%= color[i].color %>"><%= color[i].color %></option>
+							<% } %>
+						</select>
+
 					</div>
 					<div>
 						<label for="price" class="form-label">Precio del producto:</label>

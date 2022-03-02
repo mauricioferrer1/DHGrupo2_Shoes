@@ -1,6 +1,3 @@
-
-
-
 *
 {
   box-sizing: border-box;
@@ -151,6 +148,30 @@ button{
    
   }
 
+  body{
+    background-color: rgb(228, 228, 228) ;
+
+  }
+  .titulo{
+      text-align: center;
+  
+  }
+  
+  .formulario {
+      text-align: center;  }
+
+
+    input {
+      border-radius: 6px;
+    }
+    form div div {
+      margin-bottom: 3px;
+  }
+
+
+    .Editar {
+      margin-top: 5px;
+    }
 
   /* Footer */
 

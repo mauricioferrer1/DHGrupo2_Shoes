@@ -12,13 +12,13 @@
 <body>
 	<%- include('../partials/header') %>
 
-    <div>
-			<div>
-				<h1 >Edicion de Productos </h1>
+    <div class="formulario">
+			<div class="titulo">
+				<h1 > <em> Edicion de Productos </em> </h1>
 			</div>
 		<div>
 			<form class = "camposLogin" action="/product/<%= product.id %>/saveproduct?_method=PUT" method="POST" enctype="multipart/form-data">
-				<div>
+				<div class>
 					<div>
 						<label for="name" class="">Nombre del producto:</label>
 						<input type="text" id="name" name="name" value="<%=product.name%>">

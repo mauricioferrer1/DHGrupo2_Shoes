@@ -46,7 +46,7 @@
 					</div>
 					<div>
 						<label for="size">Talle:</label>
-						<select name="category" id="category" class="form-input">
+						<select name="size" id="size" class="form-input">
 							<option value="">Elegí</option>
 							<<% for( let i = 0; i <  talle.length; i++) { %>
 								<option value= "<%= talle[i].size %>"><%= talle[i].size %></option>
@@ -57,7 +57,7 @@
 					</div>
 					<div>
 						<label for="color">Color:</label>
-						<select name="category" id="category" class="form-input">
+						<select name="color" id="color" class="form-input">
 							<option value="">Elegí</option>
 							<<% for( let i = 0; i < color.length; i++) { %>
 								<option value= "<%= color[i].color %>"><%= color[i].color %></option>

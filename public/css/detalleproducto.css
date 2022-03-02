@@ -145,8 +145,13 @@ button{
     text-decoration: none;
     font-size: 14px;
     cursor: pointer;
-   
+   transition: border-radius 0.5s;
   }
+
+  button:hover {
+    border-radius: 15px;
+  } 
+
 
   body{
     background-color: rgb(228, 228, 228) ;

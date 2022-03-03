@@ -237,7 +237,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
           })
     },
 
-  ProcessEditProduct:(req,res) => {
+  /*ProcessEditProduct:(req,res) => {
     let pedirProducto =  db.Product.findByPk(req.params.id)
     let pedirColor =  db.Color.findAll()
     let pedirCategoria =  db.Category.findAll()
@@ -246,7 +246,29 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
       .then(function([producto,color,categoria,talle]){
           res.render("products/products",{producto:producto,color:color,categoria:categoria,talle:talle})
       })
+  }, */
+
+  ProcessEditProduct:(req,res) => {
+    db.Product.update({
+      name: req.body.name,
+      description: req.body.description,
+      image:req.body.img,
+      image1:req.body.img,
+      image2:req.body.img,
+      image3:req.body.img,
+      price:req.body.precio,
+      category_id:req.body.category,
+      },
+    {
+      where:{
+        id: req.params.id
+      }
+    })
+      res.redirect("/products")
+      //+ req.params.id)
   },
+
+
 
   cart: (req,res) => {
     res.render('products/shoppingcart');

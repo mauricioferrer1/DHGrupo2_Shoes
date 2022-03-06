@@ -251,7 +251,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
   ProcessEditProduct:(req,res) => {
     db.Product.update({
       name: req.body.name,
-      description: req.body.description,
+      description:req.body.description,
       image:req.body.img,
       image1:req.body.img,
       image2:req.body.img,
@@ -264,6 +264,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         id: req.params.id
       }
     })
+    //.then()
       res.redirect("/products")
       //+ req.params.id)
   },

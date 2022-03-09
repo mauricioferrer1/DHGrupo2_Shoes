@@ -69,5 +69,9 @@ button{
       margin-left: 30px;*/
   }
 
+  .is-invalid{
+    color: red;
+  }
+
  
   

@@ -1,11 +1,11 @@
 /*const fs = require('fs');
-const path = require('path');
-const {validationResult} = require('express-validator');
-const bcrypt = require('bcryptjs')
-const usersFilePath = path.join(__dirname, '../../data/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+    const path = require('path');
+    const {validationResult} = require('express-validator');
+    const bcrypt = require('bcryptjs')
+    const usersFilePath = path.join(__dirname, '../../data/users.json');
+    const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-const controller = {
+    const controller = {
 
     findUsername: (email) => {
         let userFinded = users.find (user => user.email == email);
@@ -137,9 +137,9 @@ const controller = {
                     first_name:req.body.first_name,
                     last_name:req.body.last_name,
                     email:req.body.email,
-                    //avatar_img = req.files[0].filename, no se porque falla
-                    //password = bcrypt.hashSync(req.body.password, 10), no se porque falla
-                    //password2 = bcrypt.hashSync(req.body.password2, 10)  falta crear columna en base de datos
+                    //avatar_img = req.file.filename, 
+                    //password = bcrypt.hashSync(req.body.password, 10), 
+                    //password2 = bcrypt.hashSync(req.body.password2, 10)  
                 })
 
                 .then(function(user){

@@ -51,19 +51,22 @@
 					
 					<div>
 						<label for="size">Talle:</label>
-						<% let talles = [4,5,6,7,8,9,10,11,12,13,14,15] %> 
 						<select name="size" id="size" class="form-input">
 							<option value="">Elegí</option>
-							<<% for( let i = 0; i <  talles.length; i++) { %>
-								<option value= "<%= talles[i] %>"><%= talles[i] %></option>
+							<<% for( let i = 0; i <  talle.length; i++) { %>
+								<option value= "<%= talle[i].size %>"><%= talle[i].size %></option>
 							<% } %>
 						</select>
-						 
-						
 					</div>
-
-
-					
+					<div>
+						<label for="color">Color:</label>
+						<select name="color" id="color" class="form-input">
+							<option value="">Elegí</option>
+							<<% for( let i = 0; i < color.length; i++) { %>
+								<option value= "<%= color[i].color %>"><%= color[i].color %></option>
+							<% } %>
+						</select>
+					</div>
 					<div>
 						<label for="price" class="form-label">Precio del producto:</label>
 						<input type="text" id="precio" name="precio" value="<%=product.price%>">
@@ -72,10 +75,14 @@
 						<label for="category" class="form-label">Categoría:</label>
 						<select name="category" id="category" class="form-input">
 							<option value="">Elegí</option>
-							<option value="niño">niño</option>
-							<option value="mujer">mujer</option>
-							<option value="hombre">hombre</option>
+							<% for( let i = 0; i< category.length; i++ ) { %>
+								<option value= "<%= category[i].category %>"><%= category[i].category %></option>
+							<% } %>
 						</select>
+					</div>
+					<div >
+						<label>Stock:</label>
+						<input type="text" id="description" name="stock" value="<%= product.stock %> " >
 					</div>
 					<div>
 						<label for="sale" class="form-label">Sale Status:</label>

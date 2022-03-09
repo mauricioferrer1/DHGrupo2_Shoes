@@ -22,21 +22,27 @@
 </header>
 
 <main>
-           <form class = "camposLogin" action="/users/register" method="POST" enctype="multipart/form-data">
+           <form class = "camposLogin" name= "camposLogin" action="/users/register" method="POST" enctype="multipart/form-data">
                 <input type = "hidden" , id="id", name ="id", value="99999" >
                 <label for="first_name">Nombre:</label> <br>
                 <input type="text" id="first_name" name="first_name"  size="30" autofocus> <br><br>
+                <div id="errorNombre"></div>
                 <label for="last_name">Apellido:</label><br>
                 <input type="text" id="last_name" name="last_name"  size="30"> <br><br>
+                <div id="errorApellido"></div>
                 <label for="email">Correo electrónico:</label><br>
                 <input type="text" id="email" name="email"  size="30"> <br><br>
+                <div id="errorEmail"></div>
                 <label for="password">Contraseña:</label><br>
                 <input type="password" id="password" name="password" placeholder="6 caracteres y un simbolo : #$%*" size="30"> <br><br>
+                <div id="errorPassword"></div>
                 <input type = "hidden" , id="category", name ="category", value="user" >
                 <label for="password2">Repite tu contraseña:</label><br>
                 <input type="password" id="password2" name="password2"   size="30"> <br><br>
+                <div id="errorPassword2"></div>
                 <label for="image">Imagen de perfil:</label><br>
                 <input type="file" id="image" name="image"  size="30"> <br><br>
+                <div id="errorImage"></div>
                
           
                 <div class = "submitButton"enviar>
@@ -54,6 +60,8 @@
             
          
 </main>
+
+<script src="/js/validacionRegister.js"></script>
 
 </body>
 </html>

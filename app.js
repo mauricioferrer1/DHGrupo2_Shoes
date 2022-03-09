@@ -51,7 +51,7 @@ const editUserRouter = require('./src/routes/editProfile');
 const deleteUserRouter = require('./src/routes/deleteProfile');
 
 //Definicion de router de Api
-const apiRouter = require(".src/routes/apiRouter")
+const apiRouter = require("./src/routes/apiRouter")
 
 //uso de router de Api
 app.use("/api", apiRouter)

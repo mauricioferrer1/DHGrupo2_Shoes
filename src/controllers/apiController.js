@@ -1,8 +1,7 @@
 let db = require ("../database/models")
-const controller = require("./usersController")
 
 //Productos
-const ApiController = { 
+const controller = { 
     listarProductos: (req,res) => {
     db.Product.findAll()
         .then(products => {
@@ -57,6 +56,4 @@ const ApiController = {
         }
 
 }
-
-
-module.exports = controller
+module.exports = controller 

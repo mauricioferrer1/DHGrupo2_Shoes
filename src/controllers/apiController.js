@@ -17,14 +17,10 @@ const controller = {
 
     detalleProducto: (req,res) => {
         db.Product.findByPk(req.params.id,{include:[{association:"category"},{association:"colors"},{association:"sizes"}]})
-        db.Color.findAll()
-        //color?
-          Promise.all()
-          .then(function(product,color){
-              //color
+          .then(function(product){
               return res.status(200).json({
-                  
-                  
+                  data: product,
+                  status:200
               })
           })
     },

@@ -304,6 +304,8 @@
     res.redirect("/products")
   },
 
+
+
   cart: (req,res) => {
     res.render('products/shoppingcart');
   },

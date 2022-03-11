@@ -125,8 +125,17 @@
 
         newUser: async (req,res) => {
             const resultValidation = validationResult(req);
+            // let categoryDB = await db.User_category.findAll();
+            // console.log(categoryDB)
+            // let category=[];
 
-            let category= req.body.category;
+            // for (let i=0; i<categoryDB.length; i++){
+            //     if(categoryDB[i].user_category == req.body.category){
+            //         category.push(categoryDB[i].id)
+            //     }
+            // }
+            // console.log(category)
+
             let usuarioRepetido = await db.User.findOne({
                 where: {
                     email: { [Op.like]: req.body.email }
@@ -137,14 +146,18 @@
                     first_name:req.body.first_name,
                     last_name:req.body.last_name,
                     email:req.body.email,
-                    //avatar_img = req.file.filename, 
-                    //password = bcrypt.hashSync(req.body.password, 10), 
+                    avatar_img: req.files[0].filename, 
+                    password: bcrypt.hashSync(req.body.password, 10), 
+                    user_category_id:1
                     //password2 = bcrypt.hashSync(req.body.password2, 10)  
                 })
 
                 .then(function(user){
                     req.session.userLogged = user;
                     res.render('users/login');
+                })
+                .catch(function(e){
+                    res.send(e)
                 })
             } else if (usuarioRepetido) {
                 return res.render('users/register', {

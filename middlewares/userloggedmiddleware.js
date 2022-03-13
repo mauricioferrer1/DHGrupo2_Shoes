@@ -19,28 +19,30 @@ const controller = require ('../src/controllers/usersController');
 }*/
 
 
-/*    const db = require('../src/database/models');
+    const db = require('../src/database/models');
     const { Op } = require("sequelize");
     const sequelize = db.sequelize;
     
-    async function userLoggedMiddleware (req,res,next) {
-        res.locals.islogged = false;
+    function userLoggedMiddleware (req,res,next) {
+        res.locals.isLogged = false;
 
-        let emailInCookie = req.cookies.userEmail;
-        let userFromCookie = await db.User.findOne({
+        let emailInCookie = req.cookies.userEmail; 
+        db.User.findOne({
             where:{
                 email:{[Op.like]:emailInCookie}
             }
         })
+        .then(userFromCookie => {
         
-        if(userFromCookie){
-            req.session.userlogged = userFromCookie;
-        }
+            if(userFromCookie){
+                req.session.userLogged = userFromCookie;
+            }
 
-        if( rreq.session.userlogged){
-            res.locals.islogged = true;
-            res.locals.userlogged = req.session.userlogged;
-        }
+            if( req.session.userLogged){
+                res.locals.isLogged = true;
+                res.locals.userLogged = req.session.userLogged;
+            }
+        })
 
         .catch(e => {
             console.log (e)
@@ -48,7 +50,6 @@ const controller = require ('../src/controllers/usersController');
 
         next();
         
-}*/
+}
 
-
-//module.exports = userLoggedMiddleware;
+module.exports = userLoggedMiddleware;

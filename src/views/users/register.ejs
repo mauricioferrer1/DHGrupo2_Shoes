@@ -10,16 +10,10 @@
 </head>
 <body>
 
-<header>
-    <div class = "top-header">
-        <div class = "logo">
-            <a href="/index">
-             <img src="/images/LOGO ZAPATO.png" >
-            </a>
-        </div>
+    <%- include('../partials/header') %>
+    <div>
         <p>CREA TU CUENTA</p>
     </div>
-</header>
 
 <main>
            <form class = "camposLogin" name= "camposLogin" action="/users/register" method="POST" enctype="multipart/form-data">

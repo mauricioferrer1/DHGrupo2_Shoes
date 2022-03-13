@@ -6,7 +6,7 @@ const validations = require('../../middlewares/loginValidation');
 
 /* GET login page. */
 
-router.get('/',controller.login);
+router.get('/',guestMiddleware,controller.login);
 
 /* POST Login Form */
 

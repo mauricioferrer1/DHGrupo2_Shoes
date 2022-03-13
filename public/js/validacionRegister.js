@@ -1,4 +1,4 @@
-//let db = require('../../src/database/models');
+//const db = require('../../src/database/models');
 
 window.onload = function(){
     
@@ -39,18 +39,24 @@ window.onload = function(){
     let emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     
     email.oninput= function(req,res){
+        console.log(email.value)
         // let usersDB = await db.User.findall();
         // let userRepeated = usersDB.find(user => user.email == email.value)
-    
         if(email.value.length<1) {
             document.getElementById('errorEmail').classList.add('is-invalid');
             document.getElementById('errorEmail').innerHTML= "* El Email no puede estar vacío";
         } else if(!email.value.match(emailFormat)) {
             document.getElementById('errorEmail').classList.add('is-invalid');
             document.getElementById('errorEmail').innerHTML= "* El Email no tiene un formato valido";
-        // } else if(userRepeated) {
-        //     document.getElementById('errorEmail').classList.add('is-invalid');
-        //     document.getElementById('errorEmail').innerHTML= "* El Email ya se encuentra registrado";
+        // } else if(email.value) {
+        //     db.User.findOne({ where: { email: email.value } })
+        // .then(userToLogin => {
+        //     console.log(email.value)
+        //     if(userToLogin){
+        //         document.getElementById('errorEmail').classList.add('is-invalid');
+        //         document.getElementById('errorEmail').innerHTML= "* El Email ya existe en la base de datos";
+        //     }
+        // })
         } else {
             document.getElementById('errorEmail').innerHTML= "";
             document.getElementById('errorEmail').classList.remove('is-invalid');
@@ -110,13 +116,10 @@ window.onload = function(){
 
     
     let formulario = document.forms["camposLogin"];
-    console.log(formulario)
     //let formulario= document.getElementsByClassName('camposLogin');
     formulario.addEventListener('submit',function(event) {
         let pruebaerrores = document.getElementsByClassName('is-invalid');
-        console.log(pruebaerrores)
         if(pruebaerrores.length>0){
-            console.log('hice prevent default')
             event.preventDefault()
         }
     })   

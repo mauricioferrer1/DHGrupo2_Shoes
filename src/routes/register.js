@@ -11,7 +11,6 @@ const storage = multer.diskStorage({
         cb(null, path.join(__dirname, '../../public/images/users'));
     },
     filename: (req, file, cb) => {
-        console.log(file);
         const newFilename = 'userProfile-' + Date.now() + path.extname(file.originalname);
         cb(null, newFilename);
     }
@@ -20,7 +19,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 /* GET register page. */
-router.get('/', controller.register);
+router.get('/', guestMiddleware,controller.register);
 
 /* PUT register new user page. */
 // Procesamiento del formulario de creación

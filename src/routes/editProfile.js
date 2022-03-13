@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const controller = require ('../controllers/usersController');
-
+const path = require('path')
 
 //Uso de multer
 const multer = require('multer');
@@ -13,7 +13,6 @@ const storage = multer.diskStorage({
         cb(null, path.join(__dirname, '../../public/images/users'));
     },
     filename: (req, file, cb) => {
-        console.log(file);
         const newFilename = 'userProfile-' + Date.now() + path.extname(file.originalname);
         cb(null, newFilename);
     }
@@ -22,7 +21,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 /* GET edit user*/
-router.get('/profile/', controller.editUser);
+router.get('/profile', controller.editUser);
 
 /* PUT edit user */
 router.put('/saveuser',upload.any('img'), controller.updateUser);

@@ -18,10 +18,10 @@ module.exports = (sequelize, dataTypes) => {
         password: {
             type: dataTypes.STRING
         },
-        user_categpory_id : {
+        user_category_id : {
             type: dataTypes.STRING
         },
-        avatar: {
+        avatar_img: {
             type: dataTypes.STRING
         },
        

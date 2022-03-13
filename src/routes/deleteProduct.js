@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 const controller = require ('../controllers/productsController');
 const path = require ('path');
-const autentication = require ('../../middlewares/autenticationMiddleware');
+const adminMiddleware = require ('../../middlewares/adminMiddleware');
 
 /* DELETE product */
-router.delete('/:id/process', controller.processDeleteProduct);
+router.delete('/:id/process',adminMiddleware, controller.processDeleteProduct);
 
 module.exports = router;

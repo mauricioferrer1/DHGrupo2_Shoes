@@ -10,26 +10,18 @@
 </head>
 <body>
 
-<header>
-    <div class = "top-header">
-        <div class = "logo">
-            <a href="/index">
-             <img src="/images/LOGO ZAPATO.png" >
-            </a>
-        </div>
+    <%- include('../partials/header') %>
+    <div>
         <p>EDITA TU CUENTA</p>
     </div>
-</header>
 
 <main>
-           <form class = "camposLogin" action="/users/register" method="POST" enctype="multipart/form-data">
+           <form class = "camposLogin" action="/users/edit/saveuser?_method=PUT" method="POST" enctype="multipart/form-data">
                 <input type = "hidden" , id="id", name ="id", value="99999" >
                 <label for="first_name">Nombre:</label> <br>
                 <input type="text" id="first_name" name="first_name" value="<%= user.first_name %> " size="30" autofocus> <br><br>
                 <label for="last_name">Apellido:</label><br>
                 <input type="text" id="last_name" name="last_name" value="<%= user.last_name %> " size="30"> <br><br>
-                <label for="email">Correo electrónico:</label><br>
-                <input type="text" id="email" name="email" value="<%= user.email %> " size="30"> <br><br>
                 <label for="password">Contraseña:</label><br>
                 <input type="password" id="password" name="password" placeholder="6 caracteres y un simbolo : #$%*" size="30"> <br><br>
                 <input type = "hidden" , id="category", name ="category", value="user" >
@@ -40,7 +32,7 @@
                
           
                 <div class = "submitButton"enviar>
-                    <button type="submit">Crea tu cuenta</button><br><br>
+                    <button type="submit">Actualiza tu perfil</button><br><br>
                 </div>
                 
            </form>

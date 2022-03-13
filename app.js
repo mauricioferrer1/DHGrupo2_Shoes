@@ -17,7 +17,7 @@ app.use(session({
 app.use(cookies());
 
 // middleware aplicacion 
-//app.use(userLoggedMiddleware);
+app.use(userLoggedMiddleware);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'src/views'));

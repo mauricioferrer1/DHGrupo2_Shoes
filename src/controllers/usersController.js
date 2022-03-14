@@ -196,7 +196,7 @@
                         first_name:req.body.first_name,
                         last_name:req.body.last_name,
                         email:req.body.email,
-                        avatar_img: req.file.filename,
+                        //avatar_img: req.file.filename,
                         password: bcrypt.hashSync(req.body.password, 10),
                     })
                     .then(user => {
@@ -208,7 +208,6 @@
                 })
         },
 
-
         logOut: (req,res) => {
             res.clearCookie('userEmail');
             req.session.destroy();
@@ -216,11 +215,10 @@
         }, 
 
         deleteUser:  (req,res) => {
-            db.User.destroy({
-                where: { 
-                id: req.params.id
-                }
-            })
+            user = req.session.userLogged
+            db.User.destroy({ where: { id: user.id } })
+            res.clearCookie('userEmail');
+            req.session.destroy();
             res.redirect ('/');
         }
     }  

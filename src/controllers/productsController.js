@@ -304,8 +304,6 @@
     res.redirect("/products")
   },
 
-
-
   cart: (req,res) => {
     res.render('products/shoppingcart');
   },
@@ -328,21 +326,6 @@
         res.render ("products/products",{products})
       })
   }
-  //   let productToDelete = await db.Product.findByPk(req.params.id)
-
-  //   await productToDelete.destroy()
-
-  //   let inventoryToDelete = await db.Inventory.findOne({
-  //     where: {
-  //       product_id: { [Op.like]: req.params.id }
-  //     }
-  //   })
-
-  //   await inventoryToDelete.destroy()
-
-
-  //   res.redirect('/products')
-  // }
 
 }
  

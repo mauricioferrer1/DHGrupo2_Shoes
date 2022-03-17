@@ -18,13 +18,13 @@
 			<div class="titulo">
 				<h1 > <em> Creacion de producto </em> </h1>
 			</div>
-		<div class="errores">
+		<div class="erroresJs">
 			<ul>
 				
 			</ul>
 		</div>
 		<div>
-			<form action="/products/createproduct" method="POST" enctype="multipart/form-data">
+			<form class="camposCrearEdit" name="camposCrearEdit"  action="/products/createproduct" method="POST" enctype="multipart/form-data">
 				<div>
 					<div>
 						<label for="name" class="">Nombre del producto:</label>
@@ -106,6 +106,9 @@
 	<%- include('../partials/footer') %>
 
 </main>
+
+<script src="/js/validacionCrearEdit.js"></script>
+
 
 </body>
 </html>

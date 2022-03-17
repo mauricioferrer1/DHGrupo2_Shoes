@@ -5,15 +5,28 @@ const controller = {
     listarProductos: (req,res) => {
     db.Product.findAll()
         .then(products => {
-       return res.status(200).json({
+            let respuesta = {
+                products:{
+                    id: products.id,
+                    name: products.name,
+                    description:products.description
+                },
+                data:products
+            }
+            
+        res.json (respuesta)
+        })
+    }
+        ,   
+            /*return res.status(200).json({
             count: products.length,
             //countByCategory: ....,
             data: products,
-            status: 200
+            status: 200*/
 
-       })
+            /*})
     })
-    },
+    },*/
 
     detalleProducto: (req,res) => {
         db.Product.findByPk(req.params.id,{include:[{association:"category"},{association:"colors"},{association:"sizes"}]})
@@ -44,7 +57,7 @@ const controller = {
             .then(user => {
                 return res.status (200).json({
                     data:user,
-                    url:imagen,
+                    //url:imagen,
 
                 })
             })

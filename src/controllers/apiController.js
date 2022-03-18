@@ -44,7 +44,7 @@ const controller = {
             .then(user => {
                 return res.status (200).json({
                     data:user,
-                    url:imagen,
+                    //url:avatar_img,
 
                 })
             })

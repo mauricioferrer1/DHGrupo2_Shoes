@@ -196,7 +196,7 @@
                         first_name:req.body.first_name,
                         last_name:req.body.last_name,
                         email:req.body.email,
-                        //avatar_img: req.file.filename,
+                        avatar_img: req.files[0].filename,
                         password: bcrypt.hashSync(req.body.password, 10),
                     })
                     .then(user => {

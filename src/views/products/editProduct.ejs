@@ -24,32 +24,38 @@
 				</ul>
 			</div>
 		<div>
-			<form class = "camposLogin" action="/product/<%= product.id %>/saveproduct?_method=PUT" method="POST" enctype="multipart/form-data">
+			<form class = "camposLogin" name="productForm" action="/product/<%= product.id %>/saveproduct?_method=PUT" method="POST" enctype="multipart/form-data">
 				<div class>
 					<div>
 						<label for="name" class="">Nombre del producto:</label>
 						<input type="text" id="name" name="name" value="<%=product.name%>">
 					</div>
+					<div id="errorNombre"></div>
 					<div >
 						<label>Descipción:</label>
 						<input type="text" size="100" id="description"  name="description" value="<%=product.description%>">
 					</div>
+					<div id="errorDescripcion"></div>
 					<div>
 						<label for="img">Imagen Principal de Producto:</label>
 						<input type="file" name="img" accept=".jpg" id="img">
 					</div>
+					<div id="errorImagen"></div>
 					<div>
 						<label for="img">Imagen 1 de Producto:</label>
 						<input type="file" name="img" accept=".jpg" id="img">
 					</div>
+					<div id="errorImagen1"></div>
 					<div>
 						<label for="img">Imagen 2 de Producto:</label>
 						<input type="file" name="img" accept=".jpg" id="img">
 					</div>
+					<div id="errorImagen2"></div>
 					<div>
 						<label for="img">Imagen 3 de Producto:</label>
 						<input type="file" name="img" accept=".jpg" id="img">
 					</div>
+					<div id="errorImagen3"></div>
 					
 					<div>
 						<label for="size">Talle:</label>
@@ -60,6 +66,7 @@
 							<% } %>
 						</select>
 					</div>
+					<div id="errorTalle"></div>
 					<div>
 						<label for="color">Color:</label>
 						<select name="color" id="color" class="form-input">
@@ -69,10 +76,12 @@
 							<% } %>
 						</select>
 					</div>
+					<div id="errorColor"></div>
 					<div>
 						<label for="price" class="form-label">Precio del producto:</label>
 						<input type="text" id="precio" name="precio" value="<%=product.price%>">
 					</div>
+					<div id="errorPrecio"></div>
 					<div>
 						<label for="category" class="form-label">Categoría:</label>
 						<select name="category" id="category" class="form-input">
@@ -82,10 +91,12 @@
 							<% } %>
 						</select>
 					</div>
+					<div id="errorCategoria"></div>
 					<div >
 						<label>Stock:</label>
 						<input type="text" id="description" name="stock" value="<%= product.stock %> " >
 					</div>
+					<div id="errorStock"></div>
 					<div>
 						<label for="sale" class="form-label">Sale Status:</label>
 						<select name="sale" id="sale" class="form-input">
@@ -109,14 +120,8 @@
 		</div>
 
 	</div>
-   
-</main>
-	
-
-   <%- include('../partials/footer') %>
-
-	
-
 	<script src="/js/validacionCrearEdit.js"></script>
+	<%- include('../partials/footer') %>
+
 </body>
 </html>

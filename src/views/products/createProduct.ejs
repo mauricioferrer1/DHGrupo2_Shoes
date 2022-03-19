@@ -24,16 +24,18 @@
 			</ul>
 		</div>
 		<div>
-			<form class="camposCrearEdit" name="camposCrearEdit"  action="/products/createproduct" method="POST" enctype="multipart/form-data">
+			<form action="/products/createproduct" method="POST" name="productForm" enctype="multipart/form-data">
 				<div>
 					<div>
 						<label for="name" class="">Nombre del producto:</label>
 						<input type="text" id="name" name="name">
 					</div>
+					<div id="errorNombre"></div>
 					<div >
 						<label>Descipción:</label>
 						<input type="text" id="description"  name="description">
 					</div>
+					<div id="errorDescripcion"></div>
 					<div>
 						<label for="img">Imagen para el Producto:</label>
 						<input type="file" name="img" accept=".jpg" id="img">
@@ -102,15 +104,9 @@
 		</div>
 
 	</div>
-
-</main>
-
-
+	<script src="/js/validacionCrearEdit.js"></script>
 	<%- include('../partials/footer') %>
 
-
-
-<script src="/js/validacionCrearEdit.js"></script>
 
 
 </body>

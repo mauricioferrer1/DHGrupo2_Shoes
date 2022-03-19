@@ -23,8 +23,8 @@
     </div>
 
 <!---->
-
-           <form class = "camposLogin" action="/users/login" method="POST">
+<main>
+           <form class = "camposLogin" action="/users/login" name="loginForm" method="POST">
                 <input type="email" id="email" name="email"  placeholder = "Email"  value= '<%= locals.old && old.username? old.username : ""%>'  size="30" autofocus>
                 <% if (locals.error && error.email) { %>
                         <div class="error">
@@ -32,6 +32,7 @@
                         </div>
                  <% } %>
                 <br><br>
+                <div id="errorEmail"></div>
                 <input type="password" id="password" name="password" placeholder="Password" size="30">
                 <% if (locals.error && error.password) { %>
                     <div>
@@ -39,6 +40,7 @@
                     </div>
                  
                 <% } %><br><br>
+                <div id="errorPassword"></div>
                 <input type="checkbox" name="checkbox"> Recordar mi usuario<br><br>
                 <div class = "submitButton"enviar>
                     <button type="submit">Ingresa a tu cuenta </button>
@@ -58,10 +60,7 @@
 
         </main>
            
-           <%- include('../partials/footer') %>
-            
-         
-
-
+<script src="/js/validacionLogin.js"></script>
+<%- include('../partials/footer') %>
 </body>
 </html>

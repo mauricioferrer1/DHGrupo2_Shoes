@@ -258,3 +258,44 @@ a.linkfooter:link
    color: white;
        
  }
+
+ @media (min-width: 1024px){
+  .center-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items:center; 
+      font-size: medium;
+      flex-grow: 0.8;
+  }
+
+  .burger-menu {
+      display: none;
+  }
+
+  .acerca{
+      background-color: #979dac ;
+      display: flex;
+      flex-wrap : wrap;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+      width: fit-content;
+      margin-right: 20px;
+      font-size: smaller;
+      font-weight: bold;
+  }
+
+  .servicios{
+      background-color: #979dac ;
+      display: flex;
+      flex-wrap : wrap;
+      flex-direction: column;
+      color: white;
+      width: fit-content;
+      font-size: smaller;
+      margin-right: 20px;
+      justify-content: center;
+      font-weight: bold;
+  }
+  
+}

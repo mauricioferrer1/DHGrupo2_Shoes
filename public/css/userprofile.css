@@ -91,7 +91,7 @@ div.right-navbar i{
 }
 
 a:link {
-    color: black;
+    color: #001845;
     background-color: transparent;
     text-decoration: none;
 }
@@ -112,7 +112,7 @@ main{
     width: 100%;
     background-color: white;
     overflow-y: scroll;
-    height: 68vh;        ;
+    height: 68vh;        
 }
 
 .welcome-user{
@@ -121,15 +121,41 @@ main{
 }
 
 figure{
-    width: 50%;    
+    width: 50%;
+    height: 80%;
+    display: flex;
+    /*justify-content: center; */ 
+    margin-left: 15px;
 }
 
 .user-img{
-    width: 50%;
+    width: 30%;
     border-radius:50%;
-    border: solid black 1px;
-    text-align: center;
+    border: solid black 1px;    
 }
+
+h1 {
+    color:#001845;
+}
+
+
+.editar{
+    background-color: #001845;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: rgb(206, 204, 204);
+    transition: border-radius 0.5s;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+
+  .editar:hover {
+    border-radius: 15px;
+  } 
+
 
 /* footer */
 
@@ -188,10 +214,24 @@ footer {
 /* queries */
 
 @media (max-width: 425px){
-    .imagen {
-        width: 20%;
+   /* figure {
+        width: 100%;
+    }
+    */
+    
+    .user-img {
+        width: 30%;
     }
 
+    .editar {
+        margin-top: 20px;
+    }
+
+}
+
+figure{
+    width: 100%; 
+   margin-left: 20px;  
 }
 
 @media (min-width: 1024px){
@@ -234,3 +274,4 @@ footer {
     }
     
 }
+

@@ -65,7 +65,7 @@
 
 
   a:link {
-    color: black;
+    color: #001845;
     background-color: transparent;
     text-decoration: none;
   }
@@ -119,6 +119,11 @@ ul{
   color:#001845;
 }
 
+body{
+    background-color: rgb(228, 228, 228) ;
+
+  }
+
 
 header div.logo{
     margin-top: 30px;
@@ -141,15 +146,15 @@ img{
 
 
 main{
-  width: 100%;
-  margin: 0 auto;
+  
+  margin: 10px;
+  background-color: white;
 }
 .camposLogin { 
     
-    width: auto;
-    height: auto;
+    
     text-align:center;
-    margin : 20px 50px 3px 50px;
+    /*margin : 20px 50px 3px 50px;*/
     font-size: small;
     font-weight: bold;
    
@@ -199,6 +204,20 @@ button{
 
   .is-invalid{
     color: red;
+  }
+
+
+  .submitDelete {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    
+  }
+
+  .submit {
+    margin-right: 18px;
+    margin-bottom: 10px;
   }
 
  
@@ -259,3 +278,45 @@ a.linkfooter:link
    color: white;
        
  }
+
+
+ @media (min-width: 1024px){
+  .center-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items:center; 
+      font-size: medium;
+      flex-grow: 0.8;
+  }
+
+  .burger-menu {
+      display: none;
+  }
+
+  .acerca{
+      background-color: #979dac ;
+      display: flex;
+      flex-wrap : wrap;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+      width: fit-content;
+      margin-right: 20px;
+      font-size: smaller;
+      font-weight: bold;
+  }
+
+  .servicios{
+      background-color: #979dac ;
+      display: flex;
+      flex-wrap : wrap;
+      flex-direction: column;
+      color: white;
+      width: fit-content;
+      font-size: smaller;
+      margin-right: 20px;
+      justify-content: center;
+      font-weight: bold;
+  }
+  
+}

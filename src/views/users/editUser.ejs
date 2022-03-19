@@ -4,18 +4,20 @@
     
     <%- include('../partials/head') %>
 
-   
+    <link rel="stylesheet" href="/css/registro.css">
     <title>Editar cuenta The Shoes Company</title>
 
 </head>
 <body>
 
     <%- include('../partials/header') %>
+   
+   <main>
     <div>
-        <p>EDITA TU CUENTA</p>
+        <h1 class="titulo"><em>Edita tu cuenta</em></h1>
     </div>
 
-<main>
+
            <form class = "camposLogin" action="/users/edit/saveuser?_method=PUT" method="POST" enctype="multipart/form-data">
                 <input type = "hidden" , id="id", name ="id", value="99999" >
                 <label for="first_name">Nombre:</label> <br>
@@ -30,20 +32,23 @@
                 <label for="image">Imagen de perfil:</label><br>
                 <input type="file" id="image" name="image"  size="30"> <br><br>
                
-          
-                <div class = "submitButton"enviar>
-                    <button type="submit">Actualiza tu perfil</button><br><br>
-                </div>
+                <div class="submitDelete">
+                <!--< <div class = "submitButton"enviar>-->
+                    <button type="submit" class="submit">Actualiza tu perfil</button><br><br>
+                <!--</div>-->
                 
            </form>
 
-           <form action="/users/delete?_method=DELETE" method="POST">
-            <button type="submit"> Borrar Perfil</button>
-        </form>
-        
+                    <form action="/users/delete?_method=DELETE" method="POST">
+                        <button type="submit"> Borrar Perfil</button>
+                    </form>
+                </div>
+
             
          
 </main>
+
+<%- include('../partials/footer') %>
 
 </body>
 </html>

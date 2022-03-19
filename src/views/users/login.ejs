@@ -16,12 +16,14 @@
 <body>
 
     <%- include('../partials/header') %>
+    
+<main>
     <div>
         <h1 class="titulo"><em>Login</em></h1>
     </div>
 
 <!---->
-<main>
+
            <form class = "camposLogin" action="/users/login" method="POST">
                 <input type="email" id="email" name="email"  placeholder = "Email"  value= '<%= locals.old && old.username? old.username : ""%>'  size="30" autofocus>
                 <% if (locals.error && error.email) { %>
@@ -53,11 +55,13 @@
                 </div>
                 
            </form>
+
+        </main>
            
            <%- include('../partials/footer') %>
             
          
-</main>
+
 
 </body>
 </html>

@@ -66,7 +66,7 @@
 
 
   a:link {
-    color: black;
+    color: #001845;
     background-color: transparent;
     text-decoration: none;
   }
@@ -114,9 +114,9 @@ ul{
 
 main{
         width: 100%;
-        background-color: white;
+        background-color: #979dac;
         overflow-y: scroll;
-        height: 68vh;        ;
+        height: 65vh;        ;
     }
 
     .principal {
@@ -304,7 +304,13 @@ footer {
         width: 20%;
     }
 
-    
+    main{
+      width: 100%;
+      background-color: #979dac;
+      overflow-y: scroll;
+      height: 58vh;        ;
+  }
+
    }
 
 

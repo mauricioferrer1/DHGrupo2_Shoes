@@ -12,6 +12,8 @@
 <body>
 	<%- include('../partials/header') %>
 
+	<main>
+
     <div class="formulario">
 			<div class="titulo">
 				<h1 > <em> Edicion de Productos </em> </h1>
@@ -93,22 +95,27 @@
 						</select>
 					</div>
 					
-					<div>
-					<button type="submit" class="submit">Guardar producto</button>
+						<div class="submitDelete">
+							<button type="submit" class="submit"><em>Guardar producto</em></button>
 					</form>	
-					
-						<form action="/eliminar/<%= product.id %>/process?_method=DELETE" method="POST">
-								<button type="submit"> Borrar producto</button>
-						</form>
-					</div>
+							
+								<form action="/eliminar/<%= product.id %>/process?_method=DELETE" method="POST">
+									<button type="submit"> <em>Borrar producto</em></button>
+								</form>
+							
+						</div>
 				</div>
 			
 		</div>
 
 	</div>
-	<%- include('../partials/footer') %>
+   
+</main>
+	
 
+   <%- include('../partials/footer') %>
 
+	
 
 	<script src="/js/validacionCrearEdit.js"></script>
 </body>

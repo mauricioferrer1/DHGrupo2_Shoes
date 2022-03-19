@@ -90,6 +90,8 @@ window.onload = function(){
             document.getElementById('errorPassword').classList.remove('is-invalid');
         }
     }
+    
+})
 
     let password2 = document.getElementById("password2");
     password2.oninput= function(){

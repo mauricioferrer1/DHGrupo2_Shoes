@@ -85,7 +85,7 @@ div.right-navbar i{
   width: 40px;
 }
 
-a:link{
+a:link{ 
   color: black;
   background-color: transparent;
   text-decoration: none;
@@ -97,246 +97,37 @@ ul{
 }
 
 /* Main */
-.titulo-cart{
+.container {
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  padding-bottom: 100px;
+}
+
+.image {
+  margin-right: 20px;
+  margin-left: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.image:hover .cart {
+bottom: 50px;
+opacity: 1;
+padding: 10px;
+text-decoration: none;
+}
+
+.addToCart {
+  position: absolute;
   width: 100%;
-  background-color:white;
-  color: black;
-  font-size: 1.1rem;
-  border: solid white 0.063rem;
-  margin-bottom: 1px;
-  font-weight: bold;
-  display: flex;
-  margin-top: 42px;
+  background: darkgrey;
+  transition: all 0.3ms ease-in-out;
+  opacity: o;
+  cursor: pointer;
+  text-align: center;
 }
-
-/* Columnas detalle contenido carrito */
-.shopping-cart{
-    display: flex;
-    width: 100%;
-    background-color: #33415c;
-    color: white;
-    font-size: 0.8em;
-    padding-top: 0.5rem;
-    height: 47vh;
-}
-
-.compra{
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-}
-
-.columnas-compra{
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 0.063rem solid white;
-  font-weight: bold;
-  background-color: white;
-  color: black;
-}
-
-.columnas-compra li{
-  margin-right: 0.5rem;
-}
-
-.columna1{
-  width: 50%;
-}
-
-/* Contenido columnas carrito */
-.contenido-compra{
-  display: flex;
-  justify-content: space-around;
-  margin: 0.375rem 0;
-}
-
-.contenido-compra li{
-  margin-right: 0.5rem;
-}
-
-.comprado{
-  width: 30%;
-}
-
-.qty-box{
-  /*border: solid black 0.063rem;*/
-  /*border: solid black 0.5px;*/
-  display: flex;
-  flex-direction: row;
-  width: 2rem;
-  padding-left: .313rem;
-}
-
-.fas-iconos{
-  display: flex;
-  flex-direction: column;
-  margin-left: 5px;
-}
-
-.fas{
-  display: flex;
-  flex-direction: column;
-}
-.fa-plus{
-  font-size: 0.625rem;
-}
-
-.fa-minus{
-  /*position: absolute;
-  top: 8rem;
-  left: 9.188rem;*/
-  font-size: 0.625rem;
-}
-
-.vendido{
-  max-width: 55%;
-  width: 100%;
-}
-
-.detalle-texto{
-  width: 100%;
-  border-bottom: white solid 1px;
-}
-
-.complemento-carrito{
-  margin-top: 4rem;
-}
-
-/*botón continuar & descuento*/
-
-.go-back{
-  color: white;
-  background-color: #eba917;
-  /*width: 100%;*/
-  width: 125px;
-  margin: 0.3rem 0;
-  margin-left: 50px;
-}
-
-.coupon{
-  margin: 0.375rem 0;
-}
-
-.giftcard{
-  color: white;
-  background-color: #eba917;
-  /*width: 40%;*/
-  width: 50px;
-  margin: 0.3rem 0;
-  margin-left: 135px;
-}
-
-input{
-  overflow-wrap: break-word;
-  /*width: 140,%;*/
-  width: 185px;
-}
-
-/*Total Carrito*/
-.carrito {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  border: solid white 0.063rem;
-}
-
-h4{
-  margin-left: 10px;
-}
-
-.columnas-carrito{
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 0.063px solid white;
-}
-
-.envio-carrito{
-  display: flex;
-  justify-content: space-between;
-  margin: .313rem 0;
-}
-
-.envio-descripcion{
-  padding-left: 0.25rem;
-  text-align:center;
-}
-
-.costo-envio{
-  color: white;
-  background-color: #eba917;
-  /*width: 105%;*/
-  width: 95px;
-  margin: 0.3rem 0;
-  margin-left: 1.25rem;
-}
-
-.descuento-carrito{
-    display: flex;
-    justify-content: space-around;
-    margin: .313rem 0;
-    border-bottom: 0.063px solid white;
-    border-top: 0.063px solid white;
-}
-
-.calculo-descuento{
-  padding-left: 5px;
-  width: 45%;
-}
-
-.total-carrito{
-  display: flex;
-  justify-content: space-around;
-}
-
-.pagar-total{
-  color: white;
-  background-color: #eba917;
-  /*width: 45%;*/
-  width: 65px;
-  margin: 0.3rem 0;
-  margin-left: 45px;
-}
-
-/*Completa tu compra*/
-
-.mas-productos{
-  background-color: #33415c;
-  color: white;
-  margin-top: 1px;
-  font-size: 0.8rem;
-}
-.completa-compra{
-  font-size: 1.1rem;
-  border: solid white 0.063rem;
-  margin-bottom: 0.063rem;
-  margin-left: 0;
-  background-color: white;
-  color: black;
-}
-
-.productos-paraventa,.descripcion-paraventa{
-  display: flex;
-  justify-content: space-around;
-}
-
-.venta{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding:0 5px;
-}
-.descripcion-img{
-  display: flex;
-  justify-content: space-between;
-  padding:0 5px;
-}
-/* Promociones */
-
-.promociones, .promocion-email,.promocion-titulo{
-  display: none;
-}
-
 /* Footer */
 
 footer {
@@ -396,118 +187,3 @@ button:hover{
 }
 
 /*media queries*/
-@media (min-width: 768px){
-  .shopping-cart{
-    height: 57vh;
-  }
-  .envio-envio{
-    margin-left: 52px;
-  }
-  .precio-unidad{
-    padding-left: 83px;
-  }
-}
-
-@media (min-width: 1024px){
-  .top-header{
-    height: 6vh;
-  }
-
-  .link{
-    display: flex;
-    justify-content: space-around;
-    padding: 0px 23px;
-  }
-
-  .shopping-cart{
-    height: 58vh;
-  }
-  .center-navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items:center; 
-    font-size: medium;
-    flex-grow: 0.4;  
-  }
-
-  .burger-menu{
-    display: none;
-  }
-  .precio-unidad{
-    padding-left: 130px;
-  }
-  .promociones, .promocion-email, .promocion-titulo{
-    display: flex;
-    margin: 10px 0;
-  }
-
-  .promocion-titulo li{
-    margin: auto;
-  }
-
-  .promociones {
-    border-top: 1px solid white;
-  }
-
-  .promocion-form{
-    margin-left: 39.8%;
-  }
-
-  .promocion-email{
-    padding-bottom: 20px;
-  }
-
-  .acerca{
-    background-color: #979dac ;
-    display: flex;
-    flex-wrap : wrap;
-    flex-direction: column;
-    justify-content: center;
-    color: white;
-    width: fit-content;
-    margin-right: 20px;
-    font-size: smaller;
-    font-weight: bold;
-  }
-
-  .servicios{
-    background-color: #979dac ;
-    display: flex;
-    flex-wrap : wrap;
-    flex-direction: column;
-    color: white;
-    width: fit-content;
-    font-size: smaller;
-    margin-right: 20px;
-    justify-content: center;
-    font-weight: bold;
-  }
-
-}
-
-@media (min-width: 1440px){
-  .promocion-form{
-    margin-left: 42.8%;
-  }
-
-  .promocion-email{
-    margin: 25px 0;
-  }
-
-  .promocion-titulo{
-    margin: 25px 0;
-  }
-
-  .precio-unidad{
-    padding-left: 130px;
-  }
-  .detalle-texto{
-    font-size: 1.2rem;
-  }
-  .columnas-compra{
-    font-size: 1.2rem;
-  }
-  .contenido-compra{
-    font-size: 1.2rem;
-  }
-}

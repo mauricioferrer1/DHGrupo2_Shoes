@@ -3,7 +3,7 @@ function adminMiddleware(req, res, next) {
 	let userLogged = req.session.userLogged
 	
 	if (userLogged) {
-		if(userLogged.user_category_id==2){
+		if(userLogged.user_category_id==1){
 			next();
 		} else {
 			return res.redirect('/');

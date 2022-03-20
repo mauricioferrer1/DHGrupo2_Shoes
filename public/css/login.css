@@ -60,7 +60,7 @@
 .imagenlogo{
   max-width: 100%;
   max-height: 100%;
-  width: 35%;
+  width: 60%;
 }
 
 
@@ -143,8 +143,9 @@ main{
   background-color: white;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
   margin: 10px;
+  align-items: center;
 
 }
 
@@ -153,7 +154,7 @@ main{
     flex-direction: column;
     text-align:certer;
     /*margin : 20px 50px 3px 50px;*/
-    padding: 20px 300px 20px 300px;
+    /*padding: 20px 300px 20px 300px;*/
     align-items: center;
     
   }
@@ -161,8 +162,8 @@ main{
   .submitButton{
     display: flex;
     flex-direction: row;
-    margin-left: 250px;
-    margin-right: 250px;
+    /*margin-left: 250px;
+    margin-right: 250px;*/
     align-items: center;
 
      
@@ -171,14 +172,13 @@ main{
   button{
     
     background-color: #001845;
-    padding: 8px 16px;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    margin-left: 110px;
     color: rgb(206, 204, 204);
     transition: border-radius 0.5s;
   }

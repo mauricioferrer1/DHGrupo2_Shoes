@@ -23,7 +23,7 @@
     </div>
 
 <!---->
-<main>
+
            <form class = "camposLogin" action="/users/login" name="loginForm" method="POST">
                 <input type="email" id="email" name="email"  placeholder = "Email"  value= '<%= locals.old && old.username? old.username : ""%>'  size="30" autofocus>
                 <% if (locals.error && error.email) { %>

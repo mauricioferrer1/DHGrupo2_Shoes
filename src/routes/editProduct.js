@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require ('../controllers/productsController');
 const path = require ('path');
-//const adminMiddleware = require ('../../middlewares/adminMiddleware');
+const adminMiddleware = require ('../../middlewares/adminMiddleware');
 
 //Uso de multer
 const multer = require('multer');
@@ -24,9 +24,7 @@ const upload = multer({ storage });
 
 /* GET create product page. */
 //router.get('/:id/editproduct/',autentication, controller.editProduct);  LO COMENTE PARA QUE NO ENVIE AL LOGIN EL MIDDLEWARE
-router.get('/:id/editproduct/',
-//adminMiddleware,
- controller.editProduct);
+router.get('/:id/editproduct/',adminMiddleware, controller.editProduct);
 
 /* PUT create product page. */
 router.put('/:id/saveproduct',upload.any('img'), controller.ProcessEditProduct);

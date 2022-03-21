@@ -1,10 +1,11 @@
 const express = require("express");
 const session = require('express-session');
+const cookies = require ('cookie-parser');
 const path = require('path');
 const app = express();
 const methodOverride = require('method-override')
 const userLoggedMiddleware = require('./middlewares/userloggedmiddleware');
-const cookies = require ('cookie-parser');
+
 
 //seteo session
 app.use(session({

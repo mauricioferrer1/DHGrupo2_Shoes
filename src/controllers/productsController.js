@@ -165,14 +165,22 @@
              IDcategory.push(categoriesEnBaseDatos[i].id);
            }
          }
-
+        
+        let imagenes= req.files;
+        for(let i= 0; i<imagenes; i++){
+          let image=[];
+          image.push(req.files[i].filename);
+        }
+        console.log(req.files[5].filename)
+        
        let nuevoProducto= await db.Product.create({
          name:req.body.name,
          description:req.body.description,
-         image:req.files[0].filename,
+         /*image:req.files[0].filename,
          image1:req.files[1].filename,
          image2:req.files[2].filename,
-         image3:req.files[3].filename,
+         image3:req.files[3].filename,*/
+         
          price:req.body.precio,
          category_id:IDcategory[0],
          })

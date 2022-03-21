@@ -81,6 +81,110 @@
     text-decoration: none;
   }
 
+  
+/*Burger menu*/
+.menu-btn{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn-burger{
+  width: 20px;
+  height: 5px;
+  background: black;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all .5s ease-in-out;
+  }
+
+.menu-btn-burger::before,.menu-btn-burger::after{
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 5px;
+  background: black;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn-burger::before{
+  transform: translateY(-8px);
+}
+
+.menu-btn-burger::after{
+  transform: translateY(8px);
+}
+/*cierro burger menu*/
+
+/*animacion*/
+.open .menu-btn-burger{
+  transform:translateX(-50px);
+  background:transparent;
+  box-shadow: none;
+}
+
+.open .menu-btn-burger::before{
+  transform: rotate(45deg) translate(35px,-35px);
+}
+
+.open .menu-btn-burger::after{
+  transform: rotate(-45deg) translate(35px,35px);
+}
+/*cierra animacion */
+
+/*menu desplegable*/
+
+#btn-menu{
+  display: none;
+}
+
+#label{
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  
+}
+#label:hover{
+  cursor: pointer;
+}
+
+.menu-desplegable{
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  flex-direction: column;
+  width: 40%;
+  margin-left: -72%;
+  transition: all 0.6s;
+  z-index: 1;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.menu-desplegable li{
+  background: #001845;
+  color: white;
+  padding: 20px 0 20px 3px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white
+}
+
+.menu-desplegable li:hover{
+  background-color: white
+  ;}
+  
+#btn-menu:checked ~ .menu-desplegable{
+  margin: -1%;
+}
+/*fin menu desplegable*/
 
 div.burger-menu{
   text-align: center;
@@ -318,10 +422,10 @@ button {
           width: 50%;
         }
 
-        .burger-menu
-        {
-          display: none;
-        }
+        .menu-btn, menu-desplegable, #btn-menu,#label
+{
+  display: none;
+}
 
         main
         {

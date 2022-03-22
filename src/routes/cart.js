@@ -5,7 +5,7 @@ const autentication = require ('../../middlewares/autenticationMiddleware');
 
 /* GET cart page. */
 
-router.get('/',autentication,controller.cart);
+router.get('/',controller.cart);
 
 
 module.exports = router;

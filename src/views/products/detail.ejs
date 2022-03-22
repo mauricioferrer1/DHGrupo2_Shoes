@@ -24,8 +24,8 @@
                 <p><%=product.description%></p><br>
             </div>
             <div class = "NombrePagoColorTalla" >
-                <p><%=product.name%></p><br>
-                <p>$<%=product.price%></p>
+                <p class="nombre-producto"><%=product.name%></p><br>
+                <p class="precio-producto">$<%=product.price%></p>
                 <br><br>
                 <p>Color:</p>
                 <section class="colores">
@@ -49,7 +49,7 @@
                  </div>
                  
                 <br>
-                <button type="submit" onclick="alert('Hemos añadido tu producto al carrito ')"><em>Agregar al carrito </em></button>
+                <button type="submit"  class="add-cart" onclick="alert('Hemos añadido tu producto al carrito ')"><em>Agregar al carrito </em></button>
                 <br><br><br><br><br>
             
 
@@ -60,6 +60,6 @@
 </main>
 
 <%- include('../partials/footer') %>
-
+<script src="/js/agregarAlCarrito.js"></script>
 </body>
 </html>

@@ -38,6 +38,9 @@ const indexRouter = require('./src/routes/index');
 const detailRouter = require('./src/routes/detail');
 const cartRouter = require('./src/routes/cart');
 const indexProducts  = require('./src/routes/products');
+const indexNiños  = require('./src/routes');
+const indexHombres  = require('./src/routes');
+const indexMujeres  = require('./src/routes');
 const newProduct  = require('./src/routes/newProduct');
 const editProduct  = require('./src/routes/editProduct');
 const deleteProduct  = require('./src/routes/deleteProduct');
@@ -64,6 +67,9 @@ app.use('/home', indexRouter);
 app.use('/detail', detailRouter);
 app.use('/shoppingcart', cartRouter);
 app.use('/products', indexProducts)
+app.use('/products', indexNiños)
+app.use('/products', indexHombres)
+app.use('/products', indexMujeres)
 app.use('/products/createproduct',newProduct);
 app.use(methodOverride('_method'));
 app.use('/product',editProduct);

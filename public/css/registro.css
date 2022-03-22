@@ -1,5 +1,6 @@
 /* NAV BAR CSS */
 * 
+
 {
   box-sizing: border-box;
   margin: 0%;
@@ -174,34 +175,7 @@
   margin: -1%;
 }
 /*fin menu desplegable*/
-div.burger-menu{
-  text-align: center;
-}
 
-div.burger-menu i{
-
-  border-radius: 5px;
-  color: black;
-  font-size: 30px;
-  display: block;
-  height: 25px;
-  margin: auto;
-  padding: 10px;
-  width: 40px;
-  
-}
-
-div.right-navbar i{
-  border-radius: 5px;
-  color: black;
-  font-size: 30px;
-  display: block;
-  height: 25px;
-  margin: auto;
-  padding: 10px;
-  width: 40px;
- 
-}
 ul{
   list-style: none;
   display: flex;
@@ -210,13 +184,9 @@ ul{
 }
 
 .center-navbar{
- 
   display: none;
 }
 
-
-
-*
 .titulo {
   text-align: center;
   color:#001845;
@@ -224,13 +194,10 @@ ul{
 
 body{
     background-color: rgb(228, 228, 228) ;
-
-  }
-
+}
 
 header div.logo{
     margin-top: 30px;
-    
 }
 
 .top-header { 

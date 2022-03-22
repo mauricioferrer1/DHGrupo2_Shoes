@@ -97,37 +97,49 @@ ul{
 }
 
 /* Main */
-.container {
+
+.cart a{
+  background-color: royalblue;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  padding-right: 5px;
+}
+
+.container{
   display: flex;
-  justify-content:center;
+  justify-content: center;
   flex-wrap: wrap;
   margin-top: 50px;
   padding-bottom: 100px;
 }
 
-.image {
+.image{
   margin-right: 20px;
   margin-left: 20px;
   position: relative;
   overflow: hidden;
 }
 
-.image:hover .cart {
-bottom: 50px;
-opacity: 1;
-padding: 10px;
-text-decoration: none;
+.image:hover .cart1{
+  bottom: 50px;
+  opacity: 1;
+  padding: 10px;
+  text-decoration: none;
 }
 
-.addToCart {
+.add-cart{
   position: absolute;
   width: 100%;
-  background: darkgrey;
-  transition: all 0.3ms ease-in-out;
-  opacity: o;
+  background-color: black;
+  color: black;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
   cursor: pointer;
   text-align: center;
 }
+
+
 /* Footer */
 
 footer {
@@ -187,3 +199,84 @@ button:hover{
 }
 
 /*media queries*/
+
+
+/* cart page*/
+
+.products-container {
+  max-width: 650px;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding-bottom: 100px;
+  flex-wrap: wrap;
+}
+
+.product-header{
+  width: 100%;
+  min-width: 650px;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 4px solid #000;
+  margin: auto;
+}
+
+.product-title{
+  width: 45%;
+}
+
+.price{
+  width: 15%;
+  border-bottom: 4px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.quantity{
+  width: 30%;
+  border-bottom: 4px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.total{
+  width: 15%;
+  border-bottom: 4px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.product{
+  width: 45%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #000;
+}
+
+.products-container ion-icon{
+  font-size: 25px;
+  color: blue;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.basketTotalContainer{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.basketTitale{
+  width: 30%;
+}
+
+.basketTotal{
+  width: 10%;
+}

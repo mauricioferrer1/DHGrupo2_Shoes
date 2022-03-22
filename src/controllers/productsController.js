@@ -165,22 +165,21 @@
              IDcategory.push(categoriesEnBaseDatos[i].id);
            }
          }
-        
+        let image=[];
         let imagenes= req.files;
         for(let i= 0; i<imagenes; i++){
-          let image=[];
-          image.push(req.files[i].filename);
+          if(req.files[i].filename){
+            image.push(req.files[i].filename);
+          }
         }
-        console.log(req.files[5].filename)
         
        let nuevoProducto= await db.Product.create({
          name:req.body.name,
          description:req.body.description,
-         /*image:req.files[0].filename,
+         image:req.files[0].filename,
          image1:req.files[1].filename,
          image2:req.files[2].filename,
-         image3:req.files[3].filename,*/
-         
+         image3:req.files[3].filename,
          price:req.body.precio,
          category_id:IDcategory[0],
          })
@@ -218,14 +217,47 @@
 
       res.redirect('/products'); 
     },
-  
+
   listarProductos: (req,res) => {
       db.Product.findAll()
       .then(function(products){
           res.render ("products/products",{products})
       })
   },
-  
+
+  listarNiños: async (req,res) => {
+    db.Product.findAll({
+      where: {
+       category_id: 1
+      }
+    })
+    .then(productosNiños => {
+      res.render ("products/niños",{products:productosNiños})
+    })
+  },
+
+  listarHombres: async (req,res) => {
+    db.Product.findAll({
+      where: {
+       category_id: 2
+      }
+    })
+    .then(productosHombres => {
+      res.render ("products/hombres",{products:productosHombres})
+    })
+  },
+
+  listarMujeres: async (req,res) => {
+    db.Product.findAll({
+      where: {
+       category_id: 3
+      }
+    })
+    .then(productosMujeres => {
+      res.render ("products/mujeres",{products:productosMujeres})
+    })
+  },
+
   detalleProducto: (req,res) => {
       let pedirProducto =  db.Product.findByPk(req.params.id,{include:[{association:"category"},{association:"colors"},{association:"sizes"}]})
       let pedirColor =  db.Color.findAll()
@@ -328,11 +360,6 @@
       }
     })
     res.redirect("/products")
-
-    db.Product.findAll()
-      .then(function(products){
-        res.render ("products/products",{products})
-      })
   }
 
 }

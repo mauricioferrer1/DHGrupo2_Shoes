@@ -31,7 +31,12 @@
                    
                 </ul>
                 <ul class= "right-navbar">
-                    <li><a href="#"><i class="fas fa-search fa-2x"></i></a></li>
+                    <li>
+                        <form action="/products/search" method="POST" class="header-search-form">
+                            <input type="text" name="search" placeholder="Search Product Name">
+                            <button class="submit"><i class="fas fa-search fa-2x"></i></button>
+                        </form>
+                    </li>
                     <li><a href="/shoppingcart"><i class="fas fa-shopping-cart fa-2x"></i></a></li><span class="cart-span">0</span>
                     <% if (locals.isLogged) { %>
                         <li> <a href="#"><img class="profile-img" src="images/users/<%= locals.userLogged? locals.userLogged.avatar_img : 'default.png'%>" alt="">Hi! <%=locals.userLogged.first_name%></a></li>

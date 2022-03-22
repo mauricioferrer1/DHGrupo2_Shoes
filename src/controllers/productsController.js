@@ -144,6 +144,17 @@
 
   let productController= {
     
+    search: (req, res) =>{
+      db.Product.findAll({
+        where:{
+            name: {[Op.like] : "%" + req.body.search + "%"}
+        }
+      })
+      .then(products => {
+          res.render("products/products", {products:products})
+      })
+    },
+  
     newProduct: (req,res) => {
       let pedirTalles = db.Size.findAll()
       let pedirColores = db.Color.findAll()

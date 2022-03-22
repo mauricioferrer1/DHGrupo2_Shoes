@@ -38,9 +38,10 @@ const indexRouter = require('./src/routes/index');
 const detailRouter = require('./src/routes/detail');
 const cartRouter = require('./src/routes/cart');
 const indexProducts  = require('./src/routes/products');
-const indexNiños  = require('./src/routes');
-const indexHombres  = require('./src/routes');
-const indexMujeres  = require('./src/routes');
+const searchRouter  = require('./src/routes/products');
+const indexNiños  = require('./src/routes/products');
+const indexHombres  = require('./src/routes/products');
+const indexMujeres  = require('./src/routes/products');
 const newProduct  = require('./src/routes/newProduct');
 const editProduct  = require('./src/routes/editProduct');
 const deleteProduct  = require('./src/routes/deleteProduct');
@@ -67,6 +68,7 @@ app.use('/home', indexRouter);
 app.use('/detail', detailRouter);
 app.use('/shoppingcart', cartRouter);
 app.use('/products', indexProducts)
+app.use('/products',searchRouter)
 app.use('/products', indexNiños)
 app.use('/products', indexHombres)
 app.use('/products', indexMujeres)

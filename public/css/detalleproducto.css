@@ -215,6 +215,18 @@ ul{
   display: none;
 }
 
+.submit1{
+  background-color: #001845;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  cursor: pointer;
+  color: rgb(206, 204, 204);
+  transition: border-radius 0.5s; 
+  
+}
+
 main{
   
   margin-bottom: 0%;

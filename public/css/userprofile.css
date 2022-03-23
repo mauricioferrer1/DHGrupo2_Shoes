@@ -483,7 +483,13 @@ figure{
         align-items:center; 
         font-size: medium;
         flex-grow: 0.8;
-    }
+        padding-right: 10px;
+      }
+      
+      .navlinks {
+        padding-right: 10px;
+        margin-right: 5px;
+      }
 
     .menu-btn, menu-desplegable, #btn-menu,#label
     {

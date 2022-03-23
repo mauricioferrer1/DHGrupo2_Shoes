@@ -58,6 +58,8 @@
     margin-right: auto;
     
   }
+
+  
 .imagenlogo{
   max-width: 100%;
   max-height: 100%;
@@ -307,6 +309,22 @@ h5 {
   padding-right: 5px;
 }
 
+
+.destacados3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.imgbox {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+
+
 footer { 
   bottom:0;
   width:100%;
@@ -402,8 +420,14 @@ main{
   align-items:center; 
   font-size: medium;
   flex-grow: 0.8;
-  
+  padding-right: 10px;
 }
+
+.navlinks {
+  padding-right: 10px;
+  margin-right: 5px;
+}
+
 .menu-btn, menu-desplegable, #btn-menu,#label
 {
   display: none;

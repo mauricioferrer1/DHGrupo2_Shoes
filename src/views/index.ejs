@@ -19,7 +19,7 @@
    
     <main>
         <!-- <div class="principal">
-               <figure>
+              <--! <figure>
                 <a href="/products">
                     <img src="/images/products/Zapato home.PNG" alt="zapatohome" class="zapatohome">
                     
@@ -80,9 +80,9 @@
             <h7 class="a-quien"><em>¿PARA QUIEN COMPRAS?</em></h4>
           </div>
             <ul class="generos">
-                <li><a href="/kids"> <div class="Gender">Kids</div> <img class="banner" src="/images/Banner kids.jpeg" alt="banner kids"></li>
-                <li><a href="/mujeres"> <div class="Gender">Women</div><img class="banner" src="/images/Banner women.jpeg" alt="banner women"></li>
-                <li><a href="/hombres"> <div class="Gender">Men</div> <img class="banner" src="/images/Banner men.jpeg" alt="banner men"></li>
+                <li><a href="/products/kids"> <div class="Gender">Kids</div> <img class="banner" src="/images/Banner kids.jpeg" alt="banner kids"></li>
+                <li><a href="/products/mujeres"> <div class="Gender">Women</div><img class="banner" src="/images/Banner women.jpeg" alt="banner women"></li>
+                <li><a href="/products/hombres"> <div class="Gender">Men</div> <img class="banner" src="/images/Banner men.jpeg" alt="banner men"></li>
             </ul>
         </div>
 
@@ -90,17 +90,13 @@
           <div class="contenedor-h7">
             <h7 class="a-quien"><em>Productos Destacados</em></h4>
           </div>
-            <div class="destacados">
+            <div class="destacados3">
               <% for( let i = 0; i < products.length; i++ ) { %>
-                  <div class="producto-destacado">
-                    <figure class="product-box_image">
-                      <img src="/images/products/<%= products[i].image %>" alt="imagen de producto">
-                    </figure>
-                    <article class="product-box_data">
-                      <p><%= products[i].name %></p>
-                      <p>$ <%= products[i].price %></p> 
-                    </article>
-                  </div>
+                  
+                    <section class="contenedorimagen">
+                        <img src="/images/products/<%= products[i].image %>" alt="imagen de producto" class="imgbox"> 
+                        
+                    </section>
               <% } %>
             </div>
 

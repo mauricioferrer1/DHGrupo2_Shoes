@@ -5,6 +5,7 @@ const path = require('path');
 const app = express();
 const methodOverride = require('method-override')
 const userLoggedMiddleware = require('./middlewares/userloggedmiddleware');
+const cors = require('cors')
 
 
 //seteo session
@@ -13,6 +14,9 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
+
+//seteo CORS
+app.use(cors())
 
 //seteo cookies
 app.use(cookies());

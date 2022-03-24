@@ -151,7 +151,7 @@ const apiProductsController = {
                     meta: {
                         status: 200,
                         length: product.length,
-                        url: "/api/products/lastproduct"
+                        url: "/api/lastproduct"
                     },
                     data: productToRender[0]
                 }

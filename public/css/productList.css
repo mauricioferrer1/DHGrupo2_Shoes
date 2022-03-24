@@ -238,7 +238,9 @@ ul{
   cursor: pointer;
   color: rgb(206, 204, 204);
   transition: border-radius 0.5s; 
-  
+  padding: 6px 6px;
+  margin-top: 3px;
+
 }
 
 main{
@@ -438,6 +440,10 @@ button {
   margin-right: 5px;
 }
  
+ .wrap {
+  display: flex; 
+  flex-wrap: wrap;
+ }
         
         .img{
           width: 50%;
@@ -448,17 +454,8 @@ button {
   display: none;
 }
 
-        main
-        {
-          flex-direction: row;
-          justify-content: space-evenly;
-        }
 
-       
-
-        
-      
-        .acerca{
+       .acerca{
           background-color: #979dac ;
           display: flex;
           flex-wrap : wrap;

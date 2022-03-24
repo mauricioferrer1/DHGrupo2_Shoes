@@ -46,11 +46,11 @@
         <br>
         <button type="submit"  class="add-cart" onclick="alert('Hemos añadido tu producto al carrito ')"><em>Agregar al carrito </em></button>
     </div>
-    <br><br><br><br><br>
+   
 <!--<% //if (locals.islogged) { %> -->
         <a href="/product/<%= product.id %>/editproduct"><button class="Editar"><em>Edit Product</em></button> </a>
         <form action="/eliminar/<%= product.id %>/process?_method=DELETE" method="POST">
-            <button type="submit"> <em>Borrar producto</em></button>
+            <button type="submit" class="delete"> <em>Borrar producto</em></button>
         </form>
 <!--<%// } %> -->
 </main>

@@ -13,10 +13,11 @@
  <%- include('../partials/header') %>
 
 <main>
+    <div class="wrap">
     <div><a href="/products/createproduct"><button>Create Product</button> </a> </div>
     <% if (products.length>0) { %>
         <% products.forEach (function(product){ %>
-                <div class="col-12 col-sm-6 col-lg-3">
+
                 <section class="product-box">
                     <a href="/detail/<%= product.id %>">
                         <figure class="product-box_image">
@@ -29,7 +30,8 @@
                         </article>
                     </a>
                 </section>
-            </div>
+            
+        
         <% }) %>      
     <% } else if( products.length<1){ %>
         <div class="search-msg">
@@ -37,7 +39,8 @@
         </div>
     <% } %>
        <% console.log(products.length<1) %> 
-          
+ 
+    </div>
 </main>
 
 <%- include('../partials/footer') %>

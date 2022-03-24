@@ -231,7 +231,9 @@ div.right-navbar i{
   cursor: pointer;
   color: rgb(206, 204, 204);
   transition: border-radius 0.5s; 
-  
+  padding: 6px 6px;
+  margin-top: 3px;
+
 }
 
 .profile-img{

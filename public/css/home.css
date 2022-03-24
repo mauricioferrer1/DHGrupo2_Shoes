@@ -197,8 +197,14 @@ div.right-navbar i{
   cursor: pointer;
   color: rgb(206, 204, 204);
   transition: border-radius 0.5s; 
-  
+  padding: 6px 6px;
+  margin-top: 3px;
+
 }
+
+button:hover {
+  border-radius: 15px;
+} 
 
 ul{
   list-style: none;
@@ -224,7 +230,6 @@ main{
     }
 
     .fas {
-        color: black;
         font-size: 20px;
     }
     
@@ -360,7 +365,7 @@ color: white;
 
 
 .contacto {
-background-color: #979dac ;
+background-color: #979dac;
 display: flex;
 flex-wrap : wrap;
 flex-direction: column;

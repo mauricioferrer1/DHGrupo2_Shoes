@@ -14,7 +14,7 @@
 
 	<main>
 
-    <div class="formulario">
+    	<div class="formulario">
 			<div class="titulo">
 				<h1 > <em> Edicion de Productos </em> </h1>
 			</div>
@@ -23,40 +23,53 @@
 					
 				</ul>
 			</div>
-		<div>
-			<form class = "camposLogin" name="productForm" action="/product/<%= product.id %>/saveproduct?_method=PUT" method="POST" enctype="multipart/form-data">
-				<div class>
-					<div>
-						<label for="name" class="">Nombre del producto:</label>
-						<input type="text" id="name" name="name" value="<%=product.name%>">
-					</div>
+			<div>
+				<form class = "camposLogin" name="productForm" action="/product/<%= product.id %>/saveproduct?_method=PUT" method="POST" enctype="multipart/form-data">
+					<div class>
+						<div>
+							<label for="name" class="">Nombre del producto:</label>
+							<input type="text" id="name" name="name" value="<%=product.name%>">
+						</div>
 					<div id="errorNombre"></div>
 					<div >
 						<label>Descipción:</label>
 						<input type="text" size="100" id="description"  name="description" value="<%=product.description%>">
 					</div>
-					<div id="errorDescripcion"></div>
+					<div id="errorDescripcion">
+
+					</div>
+					<figure><img src="/images/products/<%= product.image%> " alt=""></figure>
 					<div>
 						<label for="img">Imagen Principal de Producto:</label>
 						<input type="file" name="img" accept=".jpg" id="img">
 					</div>
-					<div id="errorImagen"></div>
+					<div id="errorImagen">
+
+					</div>
+					<figure><img src="/images/products/<%= product.image1%> " alt=""></figure>
 					<div>
 						<label for="img">Imagen 1 de Producto:</label>
 						<input type="file" name="img" accept=".jpg" id="img">
 					</div>
-					<div id="errorImagen1"></div>
+					<div id="errorImagen1">
+
+					</div>
+					<figure><img src="/images/products/<%= product.image2%> " alt=""></figure>
 					<div>
 						<label for="img">Imagen 2 de Producto:</label>
 						<input type="file" name="img" accept=".jpg" id="img">
 					</div>
-					<div id="errorImagen2"></div>
+					<div id="errorImagen2">
+
+					</div>
+					<figure><img src="/images/products/<%= product.image3%> " alt=""></figure>
 					<div>
 						<label for="img">Imagen 3 de Producto:</label>
 						<input type="file" name="img" accept=".jpg" id="img">
 					</div>
-					<div id="errorImagen3"></div>
-					
+					<div id="errorImagen3">
+
+					</div>
 					<div>
 						<label for="size">Talle:</label>
 						<select name="size" id="size" class="form-input">
@@ -66,7 +79,9 @@
 							<% } %>
 						</select>
 					</div>
-					<div id="errorTalle"></div>
+					<div id="errorTalle">
+
+					</div>
 					<div>
 						<label for="color">Color:</label>
 						<select name="color" id="color" class="form-input">
@@ -76,12 +91,16 @@
 							<% } %>
 						</select>
 					</div>
-					<div id="errorColor"></div>
+					<div id="errorColor">
+
+					</div>
 					<div>
 						<label for="price" class="form-label">Precio del producto:</label>
 						<input type="text" id="precio" name="precio" value="<%=product.price%>">
 					</div>
-					<div id="errorPrecio"></div>
+					<div id="errorPrecio">
+
+					</div>
 					<div>
 						<label for="category" class="form-label">Categoría:</label>
 						<select name="category" id="category" class="form-input">
@@ -91,36 +110,33 @@
 							<% } %>
 						</select>
 					</div>
-					<div id="errorCategoria"></div>
+					<div id="errorCategoria">
+
+					</div>
 					<div >
 						<label>Stock:</label>
 						<input type="text" id="description" name="stock" value="<%= product.stock %> " >
 					</div>
-					<div id="errorStock"></div>
+					<div id="errorStock">
+
+					</div>
 					<div>
 						<label for="sale" class="form-label">Sale Status:</label>
 						<select name="sale" id="sale" class="form-input">
 							<option value="">Elegí</option>
-							<option value="on-sale">On-Sale</option>
-							<option value="last-month">Last-Month</option>
+							<option value="1">On-Sale</option>
+							<option value="2">Last-Month</option>
 						</select>
 					</div>
 					
 						<div class="submitDelete">
 							<button type="submit" class="submit"><em>Guardar producto</em></button>
-					</form>	
-							
-								<form action="/eliminar/<%= product.id %>/process?_method=DELETE" method="POST">
-									<button type="submit"> <em>Borrar producto</em></button>
-								</form>
-							
 						</div>
-				</div>
+				</form>	
+			</div>
 			
 		</div>
-
-	</div>
-	<script src="/js/validacionCrearEdit.js"></script>
+		<script src="/js/validacionCrearEdit.js"></script>
 	</main>
 
 	<%- include('../partials/footer') %>

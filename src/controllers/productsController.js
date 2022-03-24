@@ -151,7 +151,11 @@
         }
       })
       .then(products => {
+        if(products){
           res.render("products/products", {products:products})
+        } else {
+          res.render("products/products")
+        }
       })
     },
   
@@ -176,14 +180,27 @@
              IDcategory.push(categoriesEnBaseDatos[i].id);
            }
          }
-        let image=[];
-        let imagenes= req.files;
-        for(let i= 0; i<imagenes; i++){
-          if(req.files[i].filename){
-            image.push(req.files[i].filename);
-          }
-        }
+        // let image=[];
+        // let imagenes= req.files;
+        // for(let i= 0; i<imagenes; i++){
+        //   if(req.files[i].filename){
+        //     image.push(req.files[i].filename);
+        //   }
+        // }
         
+        // let seasonid=[];
+        // let season = req.body.sale;
+        // console.log(season)
+        // if(season = 'on-sale'){
+        //   seasonid.push(1);          
+        // } else {
+        //   seasonid.push(2)          
+        // }
+
+        
+        let season= req.body.sale
+        let sale= parseInt(season)
+
        let nuevoProducto= await db.Product.create({
          name:req.body.name,
          description:req.body.description,
@@ -193,6 +210,8 @@
          image3:req.files[3].filename,
          price:req.body.precio,
          category_id:IDcategory[0],
+         //season_id:seasonid[0],
+         season_id:sale,
          })
 
        let nuevoProductoID= nuevoProducto.id;
@@ -229,150 +248,154 @@
       res.redirect('/products'); 
     },
 
-  listarProductos: (req,res) => {
-      db.Product.findAll()
-      .then(function(products){
-          res.render ("products/products",{products})
-      })
-  },
-
-  listarNiños: async (req,res) => {
-    db.Product.findAll({
-      where: {
-       category_id: 1
-      }
-    })
-    .then(productosNiños => {
-      res.render ("products/niños",{products:productosNiños})
-    })
-  },
-
-  listarHombres: async (req,res) => {
-    db.Product.findAll({
-      where: {
-       category_id: 2
-      }
-    })
-    .then(productosHombres => {
-      res.render ("products/hombres",{products:productosHombres})
-    })
-  },
-
-  listarMujeres: async (req,res) => {
-    db.Product.findAll({
-      where: {
-       category_id: 3
-      }
-    })
-    .then(productosMujeres => {
-      res.render ("products/mujeres",{products:productosMujeres})
-    })
-  },
-
-  detalleProducto: (req,res) => {
-      let pedirProducto =  db.Product.findByPk(req.params.id,{include:[{association:"category"},{association:"colors"},{association:"sizes"}]})
-      let pedirColor =  db.Color.findAll()
-        Promise.all([pedirProducto,pedirColor])
-        .then(function([product,color]){
-            res.render("products/detail",{product:product,color:color})
+    listarProductos: (req,res) => {
+        db.Product.findAll()
+        .then(function(products){
+            res.render ("products/products",{products})
         })
     },
 
-  editProduct: (req,res) => {
-    let pedirProducto = db.Product.findByPk(req.params.id,{include:[{association:"category"},{association:"colors"},{association:"sizes"}]})
-    let pedirTalles = db.Size.findAll()
-    let pedirColores = db.Color.findAll()
-    let pedirCategory = db.Category.findAll()
-    Promise.all([pedirProducto,pedirTalles,pedirColores,pedirCategory])
-    .then(function([product,talle,color,category]){
-      res.render('products/editproduct',{product:product,talle:talle,color:color,category:category})
-    })
-  },
+    listarNiños: async (req,res) => {
+      db.Product.findAll({
+        where: {
+        category_id: 1
+        }
+      })
+      .then(productosNiños => {
+        res.render ("products/niños",{products:productosNiños})
+      })
+    },
 
-  ProcessEditProduct:async (req,res) => {
-    // let pedirProducto =  db.Product.findByPk(req.params.id)
-    // let pedirColor =  db.Color.findAll()
-    // let pedirCategoria =  db.Category.findAll()
-    // let pedirTalle = db.Size.findAll()
-    //   Promise.all([pedirProducto,pedirColor,pedirCategoria,pedirTalle])
-    //   .then(function([producto,color,categoria,talle]){
-    //       res.render("products/products",{producto:producto,color:color,categoria:categoria,talle:talle})
-    //   })
-      let category=req.body.category;
-      let IDcategory=[];
-      let categoriesEnBaseDatos=  await db.Category.findAll()
-      for (let i=0; i<categoriesEnBaseDatos.length; i++) {
-        if(categoriesEnBaseDatos[i].category==category){ 
-          IDcategory.push(categoriesEnBaseDatos[i].id);
+    listarHombres: async (req,res) => {
+      db.Product.findAll({
+        where: {
+        category_id: 2
+        }
+      })
+      .then(productosHombres => {
+        res.render ("products/hombres",{products:productosHombres})
+      })
+    },
+
+    listarMujeres: async (req,res) => {
+      db.Product.findAll({
+        where: {
+        category_id: 3
+        }
+      })
+      .then(productosMujeres => {
+        res.render ("products/mujeres",{products:productosMujeres})
+      })
+    },
+
+    detalleProducto: (req,res) => {
+        let pedirProducto =  db.Product.findByPk(req.params.id,{include:[{association:"category"},{association:"colors"},{association:"sizes"}]})
+        let pedirColor =  db.Color.findAll()
+          Promise.all([pedirProducto,pedirColor])
+          .then(function([product,color]){
+              res.render("products/detail",{product:product,color:color})
+          })
+      },
+
+    editProduct: (req,res) => {
+      let pedirProducto = db.Product.findByPk(req.params.id,{include:[{association:"category"},{association:"colors"},{association:"sizes"}]})
+      let pedirTalles = db.Size.findAll()
+      let pedirColores = db.Color.findAll()
+      let pedirCategory = db.Category.findAll()
+      Promise.all([pedirProducto,pedirTalles,pedirColores,pedirCategory])
+      .then(function([product,talle,color,category]){
+        res.render('products/editproduct',{product:product,talle:talle,color:color,category:category})
+      })
+    },
+
+    ProcessEditProduct:async (req,res) => {
+      // let pedirProducto =  db.Product.findByPk(req.params.id)
+      // let pedirColor =  db.Color.findAll()
+      // let pedirCategoria =  db.Category.findAll()
+      // let pedirTalle = db.Size.findAll()
+      //   Promise.all([pedirProducto,pedirColor,pedirCategoria,pedirTalle])
+      //   .then(function([producto,color,categoria,talle]){
+      //       res.render("products/products",{producto:producto,color:color,categoria:categoria,talle:talle})
+      //   })
+        let category=req.body.category;
+        let IDcategory=[];
+        let categoriesEnBaseDatos=  await db.Category.findAll()
+        for (let i=0; i<categoriesEnBaseDatos.length; i++) {
+          if(categoriesEnBaseDatos[i].category==category){ 
+            IDcategory.push(categoriesEnBaseDatos[i].id);
+          }
+        }
+        
+        let season= req.body.sale
+        let sale= parseInt(season)
+
+      let updateProduct = await db.Product.update({
+        name: req.body.name,
+        description:req.body.description,
+        image:req.files[0].filename,
+        image1:req.files[1].filename,
+        image2:req.files[2].filename,
+        image3:req.files[3].filename,
+        price:req.body.precio,
+        category_id:IDcategory[0],
+        season_id:sale,
+        },
+        {
+          where: {
+            id: req.params.id
+          }
+      })
+
+      let tallesEnStock=req.body.size;
+      let listaIDTalles=[];
+      let tallesEnBaseDatos=  await db.Size.findAll() 
+      for(let j=0; j<tallesEnBaseDatos.length; j++){
+        if(tallesEnBaseDatos[j].size==tallesEnStock){
+          listaIDTalles.push(tallesEnBaseDatos[j].id);
+        }
+      }
+        
+      let coloresEnStock=req.body.color;
+      let listaIDColor=[];
+      let coloresEnBaseDatos=  await db.Color.findAll() 
+      for(j=0; j<coloresEnBaseDatos.length; j++){
+        if(coloresEnBaseDatos[j].color==coloresEnStock){
+          listaIDColor.push(coloresEnBaseDatos[j].id);
         }
       }
 
-    let updateProduct = await db.Product.update({
-      name: req.body.name,
-      description:req.body.description,
-      image:req.files[0].filename,
-      image1:req.files[1].filename,
-      image2:req.files[2].filename,
-      image3:req.files[3].filename,
-      price:req.body.precio,
-      category_id:IDcategory[0],
-      },
-      {
+      let updateProductoenStock = await db.Inventory.update({
+        color_id:listaIDColor[0],
+        size_id:listaIDTalles[0],
+        stock:req.body.stock,
+        },
+        {
         where: {
+          product_id:req.params.id,
+        }
+      })        
+
+      res.redirect("/products")
+    },
+
+    cart: (req,res) => {
+      res.render('products/shoppingcart');
+    },
+
+    processDeleteProduct:async (req,res) => {
+      db.Product.destroy({
+        where: { 
           id: req.params.id
         }
-    })
-
-    let tallesEnStock=req.body.size;
-    let listaIDTalles=[];
-    let tallesEnBaseDatos=  await db.Size.findAll() 
-    for(let j=0; j<tallesEnBaseDatos.length; j++){
-      if(tallesEnBaseDatos[j].size==tallesEnStock){
-        listaIDTalles.push(tallesEnBaseDatos[j].id);
-      }
-    }
-      
-    let coloresEnStock=req.body.color;
-    let listaIDColor=[];
-    let coloresEnBaseDatos=  await db.Color.findAll() 
-    for(j=0; j<coloresEnBaseDatos.length; j++){
-      if(coloresEnBaseDatos[j].color==coloresEnStock){
-        listaIDColor.push(coloresEnBaseDatos[j].id);
-      }
-    }
-
-    let updateProductoenStock = await db.Inventory.update({
-      color_id:listaIDColor[0],
-      size_id:listaIDTalles[0],
-      stock:req.body.stock,
-      },
-      {
-      where: {
-        product_id:req.params.id,
-      }
-    })        
-
-    res.redirect("/products")
-  },
-
-  cart: (req,res) => {
-    res.render('products/shoppingcart');
-  },
-
-  processDeleteProduct:async (req,res) => {
-    db.Product.destroy({
+      })
+      db.Inventory.destroy({
       where: { 
-        id: req.params.id
-      }
-    })
-    db.Inventory.destroy({
-     where: { 
-      product_id: req.params.id
-      }
-    })
-    res.redirect("/products")
-  }
+        product_id: req.params.id
+        }
+      })
+      res.redirect("/products")
+    }
 
-}
+  }
  
 module.exports = productController;

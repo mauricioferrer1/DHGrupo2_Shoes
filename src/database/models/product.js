@@ -30,6 +30,9 @@ module.exports = (sequelize, dataTypes) => {
         category_id: {
             type: dataTypes.INTEGER
         },
+        season_id: {
+            type: dataTypes.INTEGER
+        },
     };
     let config = {
         tableName: 'products',

@@ -7,7 +7,7 @@ const controller = {
   index: async (req,res) => {
     db.Product.findAll({
     where: {
-      season_id: 2
+      season_id: 1
      }
    })
    .then(productos => {

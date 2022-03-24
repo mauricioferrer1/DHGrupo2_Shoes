@@ -14,49 +14,45 @@
 
 <main>
    
-            <div class = "fotos360" >
-                <img class ="img360" src="/images/products/<%=product.image1%>" >
-                <img class ="img360" src="/images/products/<%=product.image2%>" >
-                
-            </div>
-            <div class ="fotodetalle">
-                <img class ="mainphoto" src="/images/products/<%=product.image%>" >
-                <p><%=product.description%></p><br>
-            </div>
-            <div class = "NombrePagoColorTalla" >
-                <p class="nombre-producto"><%=product.name%></p><br>
-                <p class="precio-producto">$<%=product.price%></p>
-                <br><br>
-                <p>Color:</p>
-                <section class="colores">
-                    <% for (let i=0; i< product.colors.length; i++) {%>
-                        <label>
-                            <input type="radio" name="colores" value="<%= product.colors[i].color %>" checked>
-                            <img src="/images/products/suede <%= product.colors[i].color%>.jpg">
-                        </label>
-                 <% }%>
-                    
-                </section
-                <p>Talla :</p>
-                
-                <div class="talla" style="width:200px;">                
-                    <select id ="talla">
-                         <% for (let i=0; i< product.sizes.length; i++) {%>
-                               <option value='<%= product.sizes[i].size %>'><%= product.sizes[i].size %></option>
-                        <% }%>
-                     </select>
- 
-                 </div>
-                 
-                <br>
-                <button type="submit"  class="add-cart" onclick="alert('Hemos añadido tu producto al carrito ')"><em>Agregar al carrito </em></button>
-                <br><br><br><br><br>
-            
-
-            </div>
-            <!--<% //if (locals.islogged) { %> -->
-            <a href="/product/<%= product.id %>/editproduct"><button class="Editar"><em>Edit Product</em></button> </a>
-            <!--<%// } %> -->
+    <div class = "fotos360" >
+        <img class ="img360" src="/images/products/<%=product.image1%>" >
+        <img class ="img360" src="/images/products/<%=product.image2%>" >            
+    </div>
+    <div class ="fotodetalle">
+        <img class ="mainphoto" src="/images/products/<%=product.image%>" >
+            <p><%=product.description%></p><br>
+    </div>
+    <div class = "NombrePagoColorTalla" >
+        <p class="nombre-producto"><%=product.name%></p><br>
+        <p class="precio-producto">$<%=product.price%></p>
+        <br><br>
+        <p>Color:</p>
+        <section class="colores">
+            <% for (let i=0; i< product.colors.length; i++) {%>
+                <label>
+                    <input type="radio" name="colores" value="<%= product.colors[i].color %>" checked>
+                        <img src="/images/products/suede <%= product.colors[i].color%>.jpg">
+                </label>
+            <% }%>                
+        </section
+        <p>Talla :</p>
+        <div class="talla" style="width:200px;">                
+            <select id ="talla">
+                <% for (let i=0; i< product.sizes.length; i++) {%>
+                    <option value='<%= product.sizes[i].size %>'><%= product.sizes[i].size %></option>
+                <% }%>
+            </select>
+        </div>
+        <br>
+        <button type="submit"  class="add-cart" onclick="alert('Hemos añadido tu producto al carrito ')"><em>Agregar al carrito </em></button>
+    </div>
+    <br><br><br><br><br>
+<!--<% //if (locals.islogged) { %> -->
+        <a href="/product/<%= product.id %>/editproduct"><button class="Editar"><em>Edit Product</em></button> </a>
+        <form action="/eliminar/<%= product.id %>/process?_method=DELETE" method="POST">
+            <button type="submit"> <em>Borrar producto</em></button>
+        </form>
+<!--<%// } %> -->
 </main>
 
 <%- include('../partials/footer') %>

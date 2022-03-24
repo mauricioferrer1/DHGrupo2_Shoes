@@ -273,6 +273,7 @@ main{
   overflow: hidden;
   transition: 300ms;
   margin: 20px 0;
+  width: 25%;
 }
 
 .product-box a {
@@ -445,10 +446,9 @@ button {
   flex-wrap: wrap;
  }
         
-        .img{
+  img{
           width: 50%;
-        }
-
+  }
         .menu-btn, menu-desplegable, #btn-menu,#label
 {
   display: none;
@@ -480,9 +480,17 @@ button {
           justify-content: center;
           font-weight: bold;
         }
+      }
 
-        
-       
+      @media (max-width: 768px){
+        .product-box {
+          background-color: #ffffff;
+          border-radius: 5px;
+          overflow: hidden;
+          transition: 300ms;
+          margin: 20px 0;
+          width: 100%;  
+        }
       }
     
 
